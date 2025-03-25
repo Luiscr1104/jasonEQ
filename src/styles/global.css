@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* 🌈 Variables CSS */
+:root {
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 220 13% 91%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --primary: 174 100% 29%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 240 5.9% 10%;
+  --secondary-foreground: 0 0% 98%;
+
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 210 40% 98%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 174 60% 48%;
+  --accent-foreground: 0 0% 100%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --radius: 0.5rem;
+
+  --advisor-slate: #334155;
+  --advisor-slate-light: #475569;
+  --advisor-slate-dark: #1e293b;
+
+  --advisor-stone: #78716c;
+  --advisor-stone-light: #a8a29e;
+  --advisor-stone-dark: #57534e;
+
+  --advisor-teal: #0d9488;
+  --advisor-teal-light: #14b8a6;
+  --advisor-teal-dark: #0f766e;
+
+  --advisor-sand: #f8fafc;
+}
+
+/* 🧩 Primero se definen las utilidades personalizadas */
+@layer utilities {
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  .bg-primary {
+    background-color: hsl(var(--primary));
+  }
+
+  .text-primary {
+    color: hsl(var(--primary));
+  }
+
+  .bg-secondary {
+    background-color: hsl(var(--secondary));
+  }
+
+  .text-secondary {
+    color: hsl(var(--secondary));
+  }
+
+  .bg-muted {
+    background-color: hsl(var(--muted));
+  }
+
+  .text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .bg-card {
+    background-color: hsl(var(--card));
+  }
+
+  .text-card-foreground {
+    color: hsl(var(--card-foreground));
+  }
+
+  .text-advisor-slate {
+    color: var(--advisor-slate);
+  }
+
+  .bg-advisor-slate {
+    background-color: var(--advisor-slate);
+  }
+
+  .text-advisor-teal {
+    color: var(--advisor-teal);
+  }
+
+  .bg-advisor-teal {
+    background-color: var(--advisor-teal);
+  }
+
+  .bg-advisor-teal-dark {
+    background-color: var(--advisor-teal-dark);
+  }
+
+  /* Radius */
+  .radius-lg {
+    border-radius: var(--radius);
+  }
+
+  .radius-md {
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  .radius-sm {
+    border-radius: calc(var(--radius) - 4px);
+  }
+
+  .radius-xl {
+    border-radius: 1rem;
+  }
+
+  .radius-2xl {
+    border-radius: 1.5rem;
+  }
+
+  .font-sans {
+    font-family: var(--font-sans), sans-serif;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif), serif;
+  }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-subtle {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+}
+
+/* 🧱 Luego ya podés aplicar esas clases en los estilos base */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}

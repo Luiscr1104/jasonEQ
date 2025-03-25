@@ -1,0 +1,138 @@
+---
+import {
+  Check,
+  Percentage,
+  Shield,
+  Clock,
+  HeartHandshake,
+  MapPin,
+  Seedling,
+  Trending
+} from '@/components/icons';
+---
+
+<section id="beneficios" class="py-20 bg-white">
+  <div class="container px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
+    <!-- Título principal -->
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="inline-block text-advisor-teal font-medium mb-2">VENTAJAS EXCLUSIVAS</span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-advisor-slate">
+        ¿Por qué
+        <span class="relative inline-block">
+          <span class="absolute bottom-2 left-0 w-full h-3 bg-advisor-teal/20 -z-10 rounded"></span>
+          <span class="relative">elegirme</span>
+        </span>
+        como tu asesor?
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Como asesor independiente autorizado, te ofrezco ventajas exclusivas al adquirir terrenos oficiales de Grupo Ecoquintas.
+      </p>
+    </div>
+
+    <!-- Beneficios tipo "bento grid" -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-6 mb-20">
+      <!-- Asesoría personalizada -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 md:col-span-3 flex flex-col justify-between h-full">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4">
+          <Check class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Asesoría Personalizada</h3>
+        <p class="text-muted-foreground">
+          Atención directa y personalizada durante todo el proceso de compra, adaptada a tus necesidades específicas y preferencias.
+        </p>
+      </div>
+
+      <!-- Precios oficiales -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 md:col-span-3 flex flex-col justify-between h-full">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4">
+          <Percentage class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Mismos Precios Oficiales</h3>
+        <p class="text-muted-foreground">
+          Accede a los mismos precios y promociones que ofrece Grupo Ecoquintas directamente, sin costos adicionales por mi asesoría.
+        </p>
+      </div>
+
+      <!-- Ahorro tiempo -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 md:col-span-2 flex flex-col justify-between h-full">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4">
+          <Clock class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Ahorro de Tiempo</h3>
+        <p class="text-muted-foreground">
+          Te ayudo a encontrar el terreno ideal según tus necesidades específicas.
+        </p>
+      </div>
+
+      <!-- Acompañamiento -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 md:col-span-2 flex flex-col justify-between h-full">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4">
+          <HeartHandshake class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Acompañamiento</h3>
+        <p class="text-muted-foreground">
+          Te acompaño durante todo el proceso, desde la selección hasta la escrituración.
+        </p>
+      </div>
+
+      <!-- Experiencia -->
+      <div class="bg-gradient-subtle from-advisor-teal/5 to-advisor-teal/20 p-6 rounded-2xl shadow-sm border border-advisor-teal/10 md:col-span-2 flex flex-col justify-between h-full">
+        <div class="text-advisor-teal font-medium text-sm mb-2">DESTACADO</div>
+        <h3 class="text-xl font-semibold mb-2">Experiencia Comprobada</h3>
+        <p class="text-advisor-slate-dark">
+          Más de 5 años ayudando a clientes a encontrar su terreno ideal con Grupo Ecoquintas.
+        </p>
+      </div>
+    </div>
+
+    <!-- Ventajas de terrenos Ecoquintas -->
+    <div class="text-center mb-12 max-w-3xl mx-auto">
+      <span class="inline-block text-advisor-teal font-medium mb-2">TERRENOS DE CALIDAD</span>
+      <h3 class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-advisor-slate">
+        Ventajas de los terrenos <span class="text-advisor-teal">Ecoquintas</span>
+      </h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-advisor-teal/20 transition-colors group">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4 group-hover:bg-advisor-teal group-hover:text-white transition-colors">
+          <Shield class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Inversión Segura</h3>
+        <p class="text-muted-foreground">
+          Todos los terrenos cuentan con escrituras y documentación legal en regla.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-advisor-teal/20 transition-colors group">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4 group-hover:bg-advisor-teal group-hover:text-white transition-colors">
+          <Trending class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Alta Plusvalía</h3>
+        <p class="text-muted-foreground">
+          Ubicaciones estratégicas con crecimiento constante y apreciación garantizada.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-advisor-teal/20 transition-colors group">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4 group-hover:bg-advisor-teal group-hover:text-white transition-colors">
+          <MapPin class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Ubicaciones Premium</h3>
+        <p class="text-muted-foreground">
+          Terrenos en zonas de alto desarrollo con excelente conectividad y servicios.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-advisor-teal/20 transition-colors group">
+        <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-advisor-teal/10 text-advisor-teal mb-4 group-hover:bg-advisor-teal group-hover:text-white transition-colors">
+          <Seedling class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Entorno Natural</h3>
+        <p class="text-muted-foreground">
+          Desarrollos en armonía con la naturaleza, preservando el ecosistema local.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

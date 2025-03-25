@@ -1,0 +1,62 @@
+---
+// No script necesario, todo es HTML + Tailwind
+import { PhoneCall, Menu } from '@/components/icons';
+
+---
+
+<header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+  <div class="container flex h-16 items-center justify-between">
+    <div class="flex items-center gap-2">
+      <a href="/" class="font-serif text-2xl font-bold text-[color:var(--advisor-slate)] ml-4">
+        Jasón Castro
+        <span class="text-sm font-normal ml-2 text-muted-foreground">Asesor Inmobiliario</span>
+      </a>
+    </div>
+
+    <!-- Menú Mobile: solo visible en móviles, no funcional por ahora sin JS -->
+    <button class="lg:hidden p-2 rounded-md hover:bg-advisor-teal/5" aria-label="Abrir menú">
+      <Menu class="h-6 w-6 text-advisor-slate" />
+    </button>
+
+    <!-- Menú Desktop -->
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="#terrenos" class="text-sm font-medium transition-colors hover:text-advisor-teal relative group">
+        Terrenos
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#beneficios" class="text-sm font-medium transition-colors hover:text-advisor-teal relative group">
+        Beneficios
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#servicios" class="text-sm font-medium transition-colors hover:text-advisor-teal relative group">
+        Mis Servicios
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#testimonios" class="text-sm font-medium transition-colors hover:text-advisor-teal relative group">
+        Testimonios
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#contacto" class="text-sm font-medium transition-colors hover:text-advisor-teal relative group">
+        Contacto
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"></span>
+      </a>
+    </nav>
+
+    <!-- Botones -->
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href="tel:722 5012"
+        class="flex items-center gap-2 border text-sm px-4 py-2 rounded-md border-advisor-teal/20 text-[color:var(--advisor-slate)] hover:bg-advisor-teal/5"
+      >
+        <PhoneCall class="h-4 w-4 text-advisor-teal" />
+        <span>+506 722 5012</span>
+      </a>
+      <a
+        href="#contacto"
+        class="bg-advisor-teal hover:bg-[color:var(--advisor-teal-dark)] text-white px-4 py-2 rounded-md text-sm"
+      >
+        Agenda una cita
+      </a>
+    </div>
+  </div>
+</header>

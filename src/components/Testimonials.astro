@@ -1,0 +1,79 @@
+---
+import { Star } from '@/components/icons';
+
+
+const testimonials = [
+  {
+    id: 1,
+    content:
+      "Jason me ayudó a encontrar el terreno perfecto en Valle Verde. Su asesoría fue invaluable y me ahorró mucho tiempo en la búsqueda. Totalmente recomendado.",
+    author: "Roberto Guzmán",
+    role: "Inversionista",
+    avatar: "RG",
+  },
+  {
+    id: 2,
+    content:
+      "Excelente atención y asesoría. Jason me explicó todas las opciones disponibles y me ayudó a elegir el terreno que mejor se adaptaba a mis necesidades y presupuesto.",
+    author: "María Fernanda López",
+    role: "Propietaria",
+    avatar: "ML",
+  },
+  {
+    id: 3,
+    content:
+      "Gracias a Jason pude adquirir un terreno en Los Encinos con excelentes condiciones. Su conocimiento del mercado y de los desarrollos de Ecoquintas fue fundamental.",
+    author: "Alejandro Torres",
+    role: "Inversionista",
+    avatar: "AT",
+  },
+];
+---
+
+<section id="testimonios" class="py-20 bg-gray-50">
+  <div class="container px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
+    <!-- Encabezado -->
+    <div class="text-center mb-16">
+      <span class="inline-block text-advisor-teal font-medium mb-2">EXPERIENCIAS</span>
+      <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-advisor-slate">
+        Lo que dicen <span class="text-advisor-teal">mis clientes</span>
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+        Experiencias de quienes ya han confiado en mi asesoría para adquirir terrenos de Grupo Ecoquintas.
+      </p>
+    </div>
+
+    <!-- Tarjetas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div
+          class={`bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm ${
+            index === 1 ? 'md:-mt-8' : ''
+          }`}
+        >
+          <div class="pt-8 px-6 relative">
+            <div class="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} class="h-5 w-5 fill-advisor-teal text-advisor-teal" />
+              ))}
+            </div>
+            <p class="text-advisor-slate relative z-10">"{testimonial.content}"</p>
+          </div>
+
+          <div class="border-t px-6 pt-6 pb-8 mt-6">
+            <div class="flex items-center gap-4">
+              <!-- Avatar con iniciales -->
+              <div class="w-10 h-10 flex items-center justify-center rounded-full bg-advisor-teal text-white text-sm font-semibold">
+                {testimonial.avatar}
+              </div>
+              <div>
+                <p class="font-medium text-advisor-slate">{testimonial.author}</p>
+                <p class="text-sm text-muted-foreground">{testimonial.role}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
