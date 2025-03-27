@@ -1,0 +1,59 @@
+---
+import { fetchEcwidCategories, type EcwidCategory } from '@/lib/fetchEcwidCategories';
+
+const categories: EcwidCategory[] = await fetchEcwidCategories();
+---
+
+<section class="max-w-6xl mx-auto px-6 mt-20" id="categories">
+    <div class="text-center mb-16">
+        <div class="inline-flex items-center rounded-full border border-advisor-teal/20 px-3 py-1 text-sm text-advisor-teal mb-4 bg-advisor-teal/5">
+          <span class="font-medium">Terrenos oficiales</span>
+          <span class="mx-2">•</span>
+          <span class="text-advisor-slate">Grupo Ecoquintas</span>
+        </div>
+        <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-advisor-slate">
+          Terrenos <span class="text-advisor-teal">Disponibles</span>
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          Te ayudo a encontrar el terreno ideal de Grupo Ecoquintas que se adapte a tus necesidades y presupuesto.
+        </p>
+      </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {categories.map(category => {
+      const image =
+        category.hdThumbnailUrl ||
+        category.thumbnailUrl ||
+        category.imageUrl;
+
+      return (
+        <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+          {image ? (
+            <img
+              src={image}
+              alt={category.name}
+              class="h-48 w-full object-cover"
+            />
+          ) : (
+            <div class="h-48 w-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
+              Sin imagen
+            </div>
+          )}
+
+          <div class="p-5 flex flex-col justify-between flex-grow">
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-1">{category.name}</h3>
+              {category.productCount > 0 && (
+                <p class="text-sm text-gray-500">{category.productCount} propiedades</p>
+              )}
+            </div>
+
+            <a href={`/categoria/${category.id}`} class="mt-4 text-center text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-md transition-colors">
+              Ver propiedades
+            </a>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
