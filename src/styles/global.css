@@ -197,3 +197,23 @@
     @apply font-serif;
   }
 }
+.custom-shape-divider-bottom-1743179714 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1743179714 svg {
+  position: relative;
+  display: block;
+  width: calc(183% + 1.3px);
+  height: 177px;
+}
+
+.custom-shape-divider-bottom-1743179714 .shape-fill {
+  fill: #ffffff;
+}
