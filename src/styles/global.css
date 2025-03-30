@@ -231,3 +231,13 @@
   height: auto;
   aspect-ratio: 16 / 9;
 }
+/* Para iframes dentro de contenido HTML */
+.prose iframe {
+  width: 100% !important;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+  max-width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}

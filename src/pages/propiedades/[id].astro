@@ -43,28 +43,20 @@ const suggested = shuffleArray(
             class="w-full h-auto object-cover"
           />
         </div>
-        {product.description && (
+        {
+          product.description && (
             <div class="mt-10">
-              <h2 class="text-2xl font-serif font-semibold text-advisor-slate mb-4">Detalles del terreno</h2>
-          
+              <h2 class="text-2xl font-serif font-semibold text-advisor-slate mb-4">
+                Detalles del terreno
+              </h2>
+
               <div
                 class="prose prose-lg max-w-none text-advisor-slate prose-strong:text-advisor-teal prose-strong:font-semibold prose-p:leading-relaxed prose-p:text-[17px]"
-                set:html={product.description.replace(/<br\s*\/?>/gi, '')}
+                set:html={product.description.replace(/<br\s*\/?>/gi, "")}
               />
-          
-              <!-- Ajustar iframe embebido -->
-              <script type="module">
-                const iframes = document.querySelectorAll('.prose iframe');
-                iframes.forEach((iframe) => {
-                  const wrapper = document.createElement('div');
-                  wrapper.className = 'responsive-iframe-container';
-                  iframe.parentNode.insertBefore(wrapper, iframe);
-                  wrapper.appendChild(iframe);
-                });
-              </script>
             </div>
-          )}
-          
+          )
+        }
       </div>
 
       <div class="md:col-span-2 flex flex-col justify-between space-y-6">
