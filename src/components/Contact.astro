@@ -1,5 +1,12 @@
 ---
-import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/components/icons';
+import {
+  PhoneCall,
+  Mail,
+  MapPin,
+  Clock,
+  ArrowUpRight,
+  Check,
+} from "@/components/icons";
 ---
 
 <section id="contacto" class="py-20 bg-advisor-slate text-white">
@@ -7,18 +14,24 @@ import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/component
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
       <!-- Información de contacto -->
       <div class="lg:col-span-5">
-        <span class="inline-block text-advisor-teal font-medium mb-2">CONTACTO</span>
-        <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+        <span class="inline-block text-advisor-teal font-medium mb-2"
+          >CONTACTO</span
+        >
+        <h2
+          class="font-serif text-3xl font-bold tracking-tight sm:text-4xl mb-6"
+        >
           ¿Interesado en <span class="text-advisor-teal">invertir</span>?
         </h2>
         <p class="text-lg text-white/80 max-w-md mb-12">
-          Completa el formulario y me pondré en contacto contigo para brindarte toda la información sobre los
-          terrenos de Grupo Ecoquintas.
+          Completa el formulario y me pondré en contacto contigo para brindarte
+          toda la información sobre los terrenos de Grupo Ecoquintas.
         </p>
 
         <div class="space-y-8">
           <div class="flex items-start gap-4">
-            <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal">
+            <div
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+            >
               <PhoneCall class="h-6 w-6" />
             </div>
             <div>
@@ -28,7 +41,9 @@ import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/component
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal">
+            <div
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+            >
               <Mail class="h-6 w-6" />
             </div>
             <div>
@@ -38,7 +53,9 @@ import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/component
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal">
+            <div
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+            >
               <MapPin class="h-6 w-6" />
             </div>
             <div>
@@ -50,7 +67,9 @@ import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/component
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal">
+            <div
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+            >
               <Clock class="h-6 w-6" />
             </div>
             <div>
@@ -66,36 +85,79 @@ import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/component
       <!-- Formulario -->
       <div class="lg:col-span-7">
         <form
+          id="contactForm"
           method="POST"
-          action="https://formsubmit.co/tu-correo@ejemplo.com"
+          action="/api/contacto"
+          enctype="application/x-www-form-urlencoded"
           class="bg-white text-foreground p-8 rounded-2xl shadow-lg space-y-6"
         >
-          <h3 class="font-serif text-2xl font-bold mb-4 text-advisor-slate">Solicita información</h3>
+          <h3 class="font-serif text-2xl font-bold mb-4 text-advisor-slate">
+            Solicita información
+          </h3>
 
+          <!-- Nombres y apellidos -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="space-y-2">
-              <label for="nombre" class="text-sm font-medium">Nombre completo *</label>
+              <label for="firstname" class="text-sm font-medium">Nombre *</label
+              >
               <input
-                id="nombre"
-                name="nombre"
+                id="firstname"
+                name="firstname"
                 required
-                class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-advisor-teal/50"
-                />
+                class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+              />
             </div>
+
             <div class="space-y-2">
-              <label for="telefono" class="text-sm font-medium">Teléfono *</label>
-              <input id="telefono" name="telefono" type="tel" required class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-advisor-teal/50" />
+              <label for="lastname" class="text-sm font-medium"
+                >Apellidos *</label
+              >
+              <input
+                id="lastname"
+                name="lastname"
+                required
+                class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+              />
             </div>
           </div>
 
+          <!-- Teléfono -->
           <div class="space-y-2">
-            <label for="email" class="text-sm font-medium">Correo electrónico *</label>
-            <input id="email" name="email" type="email" required class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-advisor-teal/50" />
+            <label for="phone" class="text-sm font-medium">Teléfono *</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+            />
           </div>
 
+          <!-- Correo electrónico -->
           <div class="space-y-2">
-            <label for="interes" class="text-sm font-medium">¿Qué tipo de terreno te interesa? *</label>
-            <select name="interes" required class="input">
+            <label for="email" class="text-sm font-medium"
+              >Correo electrónico *</label
+            >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+            />
+          </div>
+
+          <!-- Tipo de terreno -->
+          <div class="space-y-2">
+            <label for="interes" class="text-sm font-medium"
+              >¿Qué tipo de terreno te interesa? *</label
+            >
+            <select
+              id="interes"
+              name="interes"
+              required
+              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+            >
               <option disabled selected>Selecciona una opción</option>
               <option value="residencial">Terreno Residencial</option>
               <option value="comercial">Terreno Comercial</option>
@@ -104,9 +166,16 @@ import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/component
             </select>
           </div>
 
+          <!-- Presupuesto aproximado -->
           <div class="space-y-2">
-            <label for="presupuesto" class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-advisor-teal/50">Presupuesto aproximado</label>
-            <select name="presupuesto" class="input">
+            <label for="presupuesto" class="text-sm font-medium"
+              >Presupuesto aproximado</label
+            >
+            <select
+              id="presupuesto"
+              name="presupuesto"
+              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+            >
               <option disabled selected>Selecciona una opción</option>
               <option value="500k-1m">$500,000 - $1,000,000 MXN</option>
               <option value="1m-2m">$1,000,000 - $2,000,000 MXN</option>
@@ -115,34 +184,157 @@ import { PhoneCall, Mail, MapPin, Clock, ArrowUpRight, Check } from '@/component
             </select>
           </div>
 
+          <!-- Mensaje -->
           <div class="space-y-2">
-            <label for="mensaje" class="text-sm font-medium">Mensaje (opcional)</label>
+            <label for="message" class="text-sm font-medium"
+              >Mensaje (opcional)</label
+            >
             <textarea
-              id="mensaje"
-              name="mensaje"
-              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-advisor-teal/50 min-h-[100px]"
+              id="message"
+              name="message"
               placeholder="Cuéntame más sobre lo que buscas..."
+              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm min-h-[100px] focus:outline-none focus:ring-2 focus:ring-advisor-teal"
             ></textarea>
           </div>
 
+          <!-- Marketing -->
           <div class="flex items-start gap-2">
-            <input type="checkbox" id="marketing" name="marketing" class="mt-1" />
-            <label for="marketing" class="text-sm">Acepto recibir información sobre terrenos y promociones</label>
+            <input
+              type="checkbox"
+              id="marketing"
+              name="marketing"
+              class="mt-1 accent-advisor-teal"
+            />
+            <label for="marketing" class="text-sm">
+              Acepto recibir información sobre terrenos y promociones
+            </label>
           </div>
 
+          <!-- Términos -->
           <div class="flex items-start gap-2">
-            <input type="checkbox" id="terminos" name="terminos" required class="mt-1" />
-            <label for="terminos" class="text-sm">He leído y acepto los términos y condiciones y la política de privacidad *</label>
+            <input
+              type="checkbox"
+              id="terminos"
+              name="terminos"
+              required
+              class="mt-1 accent-advisor-teal"
+            />
+            <label for="terminos" class="text-sm">
+              He leído y acepto los términos y condiciones y la política de
+              privacidad *
+            </label>
           </div>
 
-          <button
-            type="submit"
-            class="w-full bg-advisor-teal hover:bg-advisor-teal-dark text-white font-medium py-3 rounded-md flex items-center justify-center gap-2"
+          <!-- Botón enviar con loader oculto -->
+          <div class="relative">
+            <button
+              type="submit"
+              class="w-full bg-advisor-teal hover:bg-advisor-teal-dark text-white font-medium py-3 rounded-md flex items-center justify-center gap-2 transition-colors"
+              id="submitBtn"
+            >
+              <span>Solicitar información</span>
+              <ArrowUpRight class="h-4 w-4" />
+            </button>
+
+            <!-- Loader oculto inicialmente -->
+            <div
+              id="loader"
+              class="loader absolute right-4 top-1/2 -translate-y-1/2 hidden"
+            >
+            </div>
+          </div>
+
+          <!-- Mensaje de éxito -->
+          <p id="successMessage" class="text-green-600 font-medium hidden">
+            ✅ ¡Formulario enviado correctamente!
+          </p>
+          <!-- Loader oculto por defecto -->
+          <span id="loader" class="loader hidden mx-auto my-4"></span>
+
+          <!-- Mensaje de éxito oculto -->
+          <p
+            id="successMessage"
+            class="hidden text-green-600 text-center font-medium mt-4"
           >
-            Solicitar información
-            <ArrowUpRight class="h-4 w-4" />
-          </button>
+            ✅ ¡Gracias! Hemos recibido tu solicitud.
+          </p>
+          <div id="toast" class="toast hidden">
+            <span id="toast-message"></span>
+          </div>
         </form>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector("form");
+            const loader = document.getElementById("loader");
+            const successMsg = document.getElementById("successMessage");
+            const submitBtn = form?.querySelector("button[type='submit']");
+            const toast = document.getElementById("toast");
+            const toastMessage = document.getElementById("toast-message");
+
+            function showToast(message: string) {
+              if (
+                !(toast instanceof HTMLElement) ||
+                !(toastMessage instanceof HTMLElement)
+              )
+                return;
+              toastMessage.textContent = message;
+              toast.classList.remove("hidden");
+              toast.classList.add("show");
+
+              setTimeout(() => {
+                toast.classList.remove("show");
+                toast.classList.add("hidden");
+              }, 3500);
+            }
+
+            if (
+              !(form instanceof HTMLFormElement) ||
+              !(loader instanceof HTMLElement) ||
+              !(submitBtn instanceof HTMLButtonElement)
+            ) {
+              return;
+            }
+
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
+
+              loader.classList.remove("hidden");
+              submitBtn.disabled = true;
+              submitBtn.classList.add("opacity-50", "cursor-not-allowed");
+
+              const formData = new FormData(form);
+              const firstname = formData.get("firstname") || "";
+              const lastname = formData.get("lastname") || "";
+              formData.set("fullname", `${firstname} ${lastname}`);
+
+              try {
+                const response = await fetch("/api/contacto", {
+                  method: "POST",
+                  body: formData,
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                  form.reset();
+                  if (successMsg instanceof HTMLElement) {
+                    successMsg.classList.remove("hidden");
+                  }
+                  showToast("✅ Contacto creado exitosamente");
+                } else {
+                  showToast("❌ Error: " + data.message);
+                }
+              } catch (err) {
+                console.error("❌ Error:", err);
+                showToast("❌ Error inesperado al enviar el formulario.");
+              } finally {
+                loader.classList.add("hidden");
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("opacity-50", "cursor-not-allowed");
+              }
+            });
+          });
+        </script>
       </div>
     </div>
   </div>
