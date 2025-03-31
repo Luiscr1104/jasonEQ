@@ -1,12 +1,10 @@
-// @ts-check
 import { defineConfig } from "astro/config";
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
-import node from "@astrojs/node"; // 👈 Importar el adaptador
+import vercel from "@astrojs/vercel/serverless"; // 👈 O "edge" si preferís
 
 export default defineConfig({
-  output: "server", // 👈 Importante para permitir SSR/API routes
-  adapter: node({ mode: "standalone" }), // 👈 Adaptador Node
+  adapter: vercel(), // 👈 Esto es todo lo que necesitas para Vercel
 
   vite: {
     resolve: {
