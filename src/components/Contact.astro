@@ -320,7 +320,9 @@ import {
                   if (successMsg instanceof HTMLElement) {
                     successMsg.classList.remove("hidden");
                   }
-                  showToast("✅ Contacto creado exitosamente");
+                  showToast(
+                    "✅ ¡Gracias por tu interés! Muy pronto recibirás información."
+                  );
                 } else {
                   showToast("❌ Error: " + data.message);
                 }

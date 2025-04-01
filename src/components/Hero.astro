@@ -1,49 +1,84 @@
-<section class="relative overflow-hidden bg-background">
-  <!-- Imagen de fondo con gradiente -->
-  <div class="absolute inset-0 z-0 animate-fade-in">
+<section
+  class="relative overflow-hidden bg-background"
+  aria-labelledby="hero-title"
+>
+  <div
+    class="absolute inset-0 z-0 animate-fade-in"
+    role="img"
+    aria-label="Terrenos Ecoquintas"
+  >
     <img
       src="/Slider.jpg"
       alt="Terrenos Ecoquintas"
-      class="w-full h-full object-cover brightness-[0.85]"
+      class="w-full h-full object-cover brightness-[0.85] blur-[1px]"
       loading="eager"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/90 to-black/60">
+    </div>
   </div>
 
-  <!-- Contenido -->
-  <div class="relative z-10 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto py-20 sm:py-24 md:py-32 lg:py-40 animate-fade-up">
-    <div class="max-w-3xl space-y-8">
+  <div
+    class="relative z-10 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto py-20 sm:py-24 md:py-32 lg:py-40 animate-fade-up"
+  >
+    <header class="max-w-3xl space-y-8">
       <!-- Badge superior -->
-      <div class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white backdrop-blur-sm">
-        <span class="mr-2 rounded-full bg-advisor-teal px-2 py-0.5 text-xs font-medium">Oficial</span>
+      <div
+        class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white backdrop-blur-sm"
+      >
+        <span
+          class="mr-2 rounded-full bg-advisor-teal px-2 py-0.5 text-xs font-medium"
+          >Oficial</span
+        >
         Asesor Autorizado de Grupo Ecoquintas
       </div>
 
-      <!-- Título -->
-      <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
-        Tu <span class="text-advisor-teal">asesor personal</span> para invertir en terrenos Ecoquintas
+      <!-- Título optimizado SEO -->
+      <h1
+        id="hero-title"
+        class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white drop-shadow-md sm:drop-shadow-lg leading-tight"
+      >
+        <strong>Terrenos 100% financiados</strong> con tu <span
+          class="text-advisor-teal">asesor personal</span
+        > de Grupo Ecoquintas
       </h1>
 
-      <!-- Franja de beneficios clave -->
-      <div class="flex flex-wrap gap-3 mt-6">
-        <span class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition">
+      <!-- Beneficios clave -->
+      <ul
+        class="flex flex-wrap gap-3 mt-6 list-none"
+        aria-label="Beneficios principales"
+      >
+        <li
+          class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition"
+        >
           100% financiadas
-        </span>
-        <span class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition">
+        </li>
+        <li
+          class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition"
+        >
           Sin prima
-        </span>
-        <span class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition">
+        </li>
+        <li
+          class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition"
+        >
           Sin fiador
-        </span>
-      </div>
+        </li>
+      </ul>
 
       <!-- Descripción -->
-      <p class="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4">
-        Te ayudo a encontrar el terreno ideal de Grupo Ecoquintas con asesoría personalizada y sin costo adicional. Accedé a los mejores precios y condiciones.
+      <p
+        class="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4"
+      >
+        Asesoría personalizada y gratuita para invertir en terrenos en <strong
+          >La Fortuna de San Carlos</strong
+        >. Accedé a lotes con precios exclusivos, excelente ubicación y la mejor
+        financiación del país.
       </p>
 
       <!-- Botones -->
-      <div class="flex flex-col sm:flex-row gap-4 pt-6">
+      <nav
+        class="flex flex-col sm:flex-row gap-4 pt-6"
+        aria-label="Acciones principales"
+      >
         <a
           href="/propiedades"
           class="text-white bg-advisor-teal hover:bg-advisor-teal-dark px-6 py-3 rounded-md text-center text-base font-medium transition-colors duration-200"
@@ -56,22 +91,32 @@
         >
           Contactarme
         </a>
-      </div>
-    </div>
+      </nav>
+    </header>
   </div>
 
   <!-- SVG decorativo inferior -->
   <div class="custom-shape-divider-bottom-1743179714">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" class="shape-fill"></path>
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" class="shape-fill"
+      ></path>
     </svg>
   </div>
 </section>
 
 <style>
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   .animate-fade-in {
     animation: fade-in 1.2s ease-in-out both;
