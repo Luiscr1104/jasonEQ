@@ -4,10 +4,10 @@ import "@fontsource/montserrat/400.css";
 ---
 
 <div id="chat-widget-container" class="fixed bottom-6 right-6 z-50">
-  <!-- Botón flotante -->
+  <!-- Botón flotante oculto inicialmente -->
   <button
     id="chat-toggle"
-    class="bg-[#ffcc66] text-white shadow-xl rounded-full w-16 h-16 flex items-center justify-center hover:scale-110 transition-transform border-2 border-white"
+    class="bg-[#ffcc66] text-white shadow-xl rounded-full w-16 h-16 flex items-center justify-center hover:scale-110 transition-transform border-2 border-white hidden"
     aria-label="Abrir chat con Jason"
   >
     <img
@@ -17,21 +17,30 @@ import "@fontsource/montserrat/400.css";
     />
   </button>
 
-  <!-- Chat box -->
+  <!-- Chat box abierto por defecto -->
   <div
     id="chat-widget"
-    class="hidden mt-4 w-[360px] max-h-[80vh] bg-white border border-[#e2e8f0] rounded-xl shadow-xl flex flex-col overflow-hidden animate-fade-in"
+    class="mt-4 w-[360px] max-h-[80vh] bg-white border border-[#e2e8f0] rounded-xl shadow-xl flex flex-col overflow-hidden animate-fade-in"
   >
-    <!-- Header -->
+    <!-- Header con botón cerrar -->
     <div
-      class="bg-[#ffcc66] text-[#1C1C1C] px-4 py-3 text-base font-bold flex items-center gap-3 font-[Montserrat]"
+      class="bg-[#ffcc66] text-[#1C1C1C] px-4 py-3 text-base font-bold flex items-center justify-between font-[Montserrat]"
     >
-      <img
-        src="/jason-profile.png"
-        alt="Jason Castro"
-        class="w-10 h-10 rounded-full border-2 border-white"
-      />
-      Chateá con Jason
+      <div class="flex items-center gap-3">
+        <img
+          src="/jason-profile.png"
+          alt="Jason Castro"
+          class="w-10 h-10 rounded-full border-2 border-white"
+        />
+        Chateá con Jason
+      </div>
+      <button
+        id="chat-close"
+        class="text-xl font-bold text-[#1C1C1C] hover:text-red-600 transition"
+        aria-label="Cerrar chat"
+      >
+        ✕
+      </button>
     </div>
 
     <!-- Mensajes -->
@@ -83,13 +92,36 @@ import "@fontsource/montserrat/400.css";
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("chat-toggle");
+    const closeBtn = document.getElementById("chat-close");
     const chatWidget = document.getElementById("chat-widget");
     const form = document.getElementById("chat-form");
     const input = document.getElementById("chat-input");
     const messages = document.getElementById("messages");
 
+    const chatClosed = localStorage.getItem("chatClosed");
+
+    if (chatWidget && toggleBtn) {
+      if (chatClosed === "true") {
+        // Si ya lo había cerrado, mostrar el botón flotante y ocultar el chat
+        chatWidget.classList.add("hidden");
+        toggleBtn.classList.remove("hidden");
+      } else {
+        // Mostrar el chat por defecto
+        chatWidget.classList.remove("hidden");
+        toggleBtn.classList.add("hidden");
+      }
+    }
+
+    closeBtn?.addEventListener("click", () => {
+      chatWidget?.classList.add("hidden");
+      toggleBtn?.classList.remove("hidden");
+      localStorage.setItem("chatClosed", "true");
+    });
+
     toggleBtn?.addEventListener("click", () => {
-      chatWidget?.classList.toggle("hidden");
+      chatWidget?.classList.remove("hidden");
+      toggleBtn?.classList.add("hidden");
+      localStorage.removeItem("chatClosed");
     });
 
     form?.addEventListener("submit", async (e) => {
@@ -99,7 +131,6 @@ import "@fontsource/montserrat/400.css";
       const userMsg = input.value.trim();
       if (!userMsg) return;
 
-      // Mostrar mensaje usuario
       const userBubble = document.createElement("div");
       userBubble.className = "bg-gray-100 p-2 rounded-lg text-right";
       userBubble.textContent = userMsg;
@@ -108,9 +139,9 @@ import "@fontsource/montserrat/400.css";
 
       messages.scrollTop = messages.scrollHeight;
 
-      // Mostrar escribiendo...
       const aiBubble = document.createElement("div");
-      aiBubble.className = "bg-[#fffae6] p-2 italic text-[#334155] rounded-lg";
+      aiBubble.className =
+        "bg-[#ffcc66]/10 p-2 italic text-[#334155] rounded-lg";
       aiBubble.textContent = "Jason está escribiendo...";
       messages.appendChild(aiBubble);
 

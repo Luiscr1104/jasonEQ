@@ -14,7 +14,7 @@ export async function POST({ request }: APIContext) {
       });
     }
 
-    const apiKey = process.env.OPEN_ROUTER_API_KEY;
+    const apiKey = import.meta.env.OPEN_ROUTER_API_KEY;
 
     const response = await fetch(
       "https://openrouter.ai/api/v1/chat/completions",
