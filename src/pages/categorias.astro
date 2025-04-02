@@ -5,7 +5,9 @@ import {
   type EcwidCategory,
 } from "@/lib/fetchEcwidCategories";
 
-const categories: EcwidCategory[] = await fetchEcwidCategories();
+const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
+  (cat) => cat.id !== 138187776
+);
 ---
 
 <BaseLayout title="Categorías en venta | Grupo Ecoquintas">
