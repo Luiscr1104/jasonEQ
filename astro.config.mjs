@@ -4,8 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel/serverless"; // 👈 O "edge" si preferís
 
 export default defineConfig({
-  adapter: vercel(), // 👈 Esto es todo lo que necesitas para Vercel
-
+  output: "server", // 🔥 esto activa SSR
+  adapter: vercel(),
   vite: {
     resolve: {
       alias: {
