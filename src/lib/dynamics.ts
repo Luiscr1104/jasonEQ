@@ -81,6 +81,8 @@ export async function createContactInDynamics({
     new_telefono: phone,
     telephone1: phone,
     description: message,
+    new_medio: 100000014,
+    new_nivel_de_interes: 100000001,
   };
 
   if (!DYNAMICS_API_URL) {
