@@ -1,10 +1,10 @@
 import { defineConfig } from "astro/config";
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
-import vercel from "@astrojs/vercel/serverless"; // 👈 O "edge" si preferís
+import vercel from "@astrojs/vercel/serverless";
 
 export default defineConfig({
-  output: "server", // 🔥 esto activa SSR
+  output: "server",
   adapter: vercel(),
   vite: {
     resolve: {

@@ -6,13 +6,6 @@ import {
   fetchEcwidProducts,
 } from "@/lib/fetchEcwidProducts";
 
-export async function getStaticPaths() {
-  const products = await fetchEcwidProducts();
-  return products.map((product) => ({
-    params: { id: String(product.id) },
-  }));
-}
-
 const { params } = Astro;
 const productId = params.id as string;
 

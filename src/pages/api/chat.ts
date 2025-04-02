@@ -1,5 +1,6 @@
 // src/pages/api/chat.ts
 import type { APIContext } from "astro";
+import "dotenv/config";
 
 export const prerender = false;
 
@@ -15,8 +16,8 @@ export async function POST({ request }: APIContext) {
     }
     const apiKey = process.env.OPEN_ROUTER_API_KEY;
 
-    if (!apiKey) {
-      throw new Error("❌ Faltante la clave OPEN_ROUTER_API_KEY");
+    if (!apiKey || apiKey === "your_default_value") {
+      throw new Error("❌ OPEN_ROUTER_API_KEY no está definida correctamente");
     }
 
     const response = await fetch(
