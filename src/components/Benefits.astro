@@ -15,9 +15,9 @@ import {
   <div class="container px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
     <!-- Título principal -->
     <div class="text-center mb-16 max-w-3xl mx-auto">
-      <span class="inline-block text-primary font-medium mb-2"
-        >VENTAJAS EXCLUSIVAS</span
-      >
+      <span class="inline-block text-primary font-medium mb-2">
+        VENTAJAS EXCLUSIVAS
+      </span>
       <h2
         class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-foreground"
       >
@@ -36,66 +36,72 @@ import {
       </p>
     </div>
 
-    <!-- Beneficios tipo "bento grid" -->
-    <div class="grid grid-cols-1 md:grid-cols-6 gap-6 mb-30">
-      <!-- Cada tarjeta -->
+    <!-- Grid de beneficios optimizado -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {
         [
           {
             icon: Check,
             title: "Asesoría Personalizada",
-            text: "Atención directa y personalizada durante todo el proceso de compra, adaptada a tus necesidades específicas y preferencias.",
-            span: 3,
+            text: "Atención directa y personalizada durante todo el proceso de compra, adaptada a tus necesidades.",
           },
           {
             icon: Percentage,
-            title: "Mismos Precios Oficiales",
-            text: "Accede a los mismos precios y promociones que ofrece Grupo Ecoquintas directamente, sin costos adicionales por mi asesoría.",
-            span: 3,
+            title: "Precios Oficiales",
+            text: "Accedé a las mismas condiciones que ofrece Grupo Ecoquintas, sin cargos adicionales.",
           },
           {
             icon: Clock,
             title: "Ahorro de Tiempo",
             text: "Te ayudo a encontrar el terreno ideal según tus necesidades específicas.",
-            span: 2,
           },
           {
             icon: HeartHandshake,
-            title: "Acompañamiento",
+            title: "Acompañamiento Completo",
             text: "Te acompaño durante todo el proceso, desde la selección hasta la escrituración.",
-            span: 2,
           },
-        ].map(({ icon: Icon, title, text, span }) => (
-          <div
-            class={`bg-white p-6 rounded-2xl shadow-sm border border-border md:col-span-${span} flex flex-col justify-between h-full transition-transform hover:-translate-y-1 duration-300`}
-          >
-            <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4">
+        ].map(({ icon: Icon, title, text }) => (
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-border hover:shadow-md hover:border-primary/40 transition group hover:-translate-y-1">
+            <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
               <Icon class="w-6 h-6" />
             </div>
-            <h3 class="text-xl font-semibold mb-2">{title}</h3>
+            <h3 class="text-xl font-semibold text-foreground mb-2">{title}</h3>
             <p class="text-muted-foreground">{text}</p>
           </div>
         ))
       }
 
-      <!-- Tarjeta destacada -->
-      <div
-        class="bg-gradient-to-tr from-primary/10 to-primary/5 border border-primary/20 p-6 rounded-2xl shadow-sm md:col-span-2 flex flex-col justify-between h-full transition-transform hover:-translate-y-1 duration-300"
-      >
-        <div class="text-primary font-medium text-sm mb-2">DESTACADO</div>
-        <h3 class="text-xl font-semibold mb-2">Experiencia Comprobada</h3>
-        <p class="text-foreground">
-          Más de 5 años ayudando a clientes a encontrar su terreno ideal con
-          Grupo Ecoquintas.
-        </p>
+      <!-- Tarjeta destacada con gradient -->
+      <div class="col-span-1 sm:col-span-2 lg:col-span-4">
+        <div
+          class="bg-gradient-to-br from-primary/10 via-yellow-50 to-white border border-primary/30 p-6 rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-6 transition hover:-translate-y-1"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-primary text-white"
+            >
+              <Check class="w-6 h-6" />
+            </div>
+            <div>
+              <div class="text-primary font-medium text-sm">DESTACADO</div>
+              <h3 class="text-xl font-semibold text-foreground">
+                Experiencia Comprobada
+              </h3>
+            </div>
+          </div>
+          <p class="text-muted-foreground text-center md:text-left md:ml-8">
+            Más de 5 años ayudando a clientes a encontrar su terreno ideal con
+            Grupo Ecoquintas.
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- Subtítulo -->
     <div class="text-center mb-12 max-w-3xl mx-auto mt-20">
-      <span class="inline-block text-primary font-medium mb-2"
-        >TERRENOS DE CALIDAD</span
-      >
+      <span class="inline-block text-primary font-medium mb-2">
+        TERRENOS DE CALIDAD
+      </span>
       <h3
         class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-foreground"
       >
@@ -103,8 +109,8 @@ import {
       </h3>
     </div>
 
-    <!-- Grid de ventajas -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Ventajas de los terrenos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {
         [
           {
@@ -132,7 +138,7 @@ import {
             <div class="h-12 w-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
               <Icon class="w-6 h-6" />
             </div>
-            <h3 class="text-xl font-semibold mb-2">{title}</h3>
+            <h3 class="text-xl font-semibold text-foreground mb-2">{title}</h3>
             <p class="text-muted-foreground">{text}</p>
           </div>
         ))

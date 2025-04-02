@@ -10,7 +10,7 @@ async function POST({ request }) {
         headers: { "Content-Type": "application/json" }
       });
     }
-    const apiKey = "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";
+    const apiKey = process.env.OPEN_ROUTER_API_KEY;
     const response = await fetch(
       "https://openrouter.ai/api/v1/chat/completions",
       {
