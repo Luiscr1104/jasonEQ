@@ -7,7 +7,6 @@ type CreateContactInput = {
   email: string;
   phone?: string;
   message?: string;
-  idioma?: "es" | "en";
 };
 
 // ⚙️ Variables de entorno usando process.env
@@ -16,7 +15,7 @@ const CLIENT_ID = process.env.ASTRO_DYNAMICS_CLIENT_ID;
 const CLIENT_SECRET = process.env.ASTRO_DYNAMICS_CLIENT_SECRET;
 const TENANT_ID = process.env.ASTRO_DYNAMICS_TENANT_ID;
 const SCOPE = process.env.ASTRO_DYNAMICS_SCOPE;
-const JASON_OWNER_ID = "23fddb4d-37a0-ef11-8a6a-0022480a5c2f"; // GUID fijo de Jason Castro
+const JASON_OWNER_ID = process.env.ASTRO_DYNAMICS_JASON_OWNER_ID;
 
 // 🧠 Validar variables obligatorias
 if (
@@ -72,7 +71,6 @@ export async function createContactInDynamics({
   email,
   phone = "",
   message = "",
-  idioma = "es",
 }: CreateContactInput): Promise<string> {
   const accessToken = await getAccessToken();
 
@@ -80,11 +78,9 @@ export async function createContactInDynamics({
     firstname,
     lastname,
     emailaddress1: email,
+    new_telefono: phone,
     telephone1: phone,
     description: message,
-    new_idioma: idioma === "es", // true si es español
-    new_medio: 100000014, // Pruebas
-    new_nivel_de_interes: 100000001, // Muy interesado
   };
 
   if (!DYNAMICS_API_URL) {
