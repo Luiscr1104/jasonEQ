@@ -26,6 +26,26 @@
 		{
 			"src": "^/api/contacto/?$",
 			"dest": "_render"
+		},
+		{
+			"src": "^/categorias/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/categorias/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/propiedades/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/propiedades/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/$",
+			"dest": "_render"
 		}
 	]
 }
