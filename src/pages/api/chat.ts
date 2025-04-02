@@ -13,7 +13,7 @@ export async function POST({ request }: APIContext) {
         headers: { "Content-Type": "application/json" },
       });
     }
-    const apiKey = import.meta.env.PRIVATE_OPEN_ROUTER_API_KEY;
+    const apiKey = process.env.OPEN_ROUTER_API_KEY;
 
     if (!apiKey) {
       throw new Error("❌ Faltante la clave OPEN_ROUTER_API_KEY");

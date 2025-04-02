@@ -10,8 +10,10 @@ async function POST({ request }) {
         headers: { "Content-Type": "application/json" }
       });
     }
-    const apiKey = "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";
-    if (!apiKey) ;
+    const apiKey = process.env.OPEN_ROUTER_API_KEY;
+    if (!apiKey) {
+      throw new Error("❌ Faltante la clave OPEN_ROUTER_API_KEY");
+    }
     const response = await fetch(
       "https://openrouter.ai/api/v1/chat/completions",
       {
