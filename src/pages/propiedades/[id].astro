@@ -13,7 +13,7 @@ const allProducts = await fetchEcwidProducts();
 const product = allProducts.find((p) => p.id.toString() === productId);
 
 if (!product) {
-  throw new Error("Producto no encontrado");
+  throw new Error("404");
 }
 
 function shuffleArray<T>(array: T[]): T[] {

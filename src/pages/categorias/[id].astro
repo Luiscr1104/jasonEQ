@@ -12,6 +12,9 @@ const categoryId = params.id as string;
 const products: EcwidProduct[] = await fetchEcwidProductsByCategory(categoryId);
 const categories = await fetchEcwidCategories();
 const currentCategory = categories.find((c) => c.id.toString() === categoryId);
+if (!currentCategory) {
+  throw new Error("404");
+}
 const categoryName = currentCategory?.name || "Categoría";
 ---
 

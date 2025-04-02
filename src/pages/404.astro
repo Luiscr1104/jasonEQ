@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Página no encontrada | Jason Castro">
+  <section
+    class="min-h-[70vh] flex items-center justify-center text-center px-6 py-24"
+  >
+    <div class="max-w-xl mx-auto">
+      <img
+        src="/jason-profile.png"
+        alt="Jason Castro"
+        class="w-20 h-20 rounded-full mx-auto border-2 border-white shadow-lg"
+      />
+
+      <h1 class="text-5xl font-bold text-[#ffcc66] mt-6">404</h1>
+      <h2 class="text-2xl font-semibold mt-2 text-foreground">
+        Página no encontrada
+      </h2>
+      <p class="text-muted-foreground mt-4 text-lg">
+        Parece que esta página no existe o fue movida. <br />
+        Pero no te preocupés, ¡te ayudo a encontrar el terreno ideal!
+      </p>
+
+      <div class="mt-6 flex justify-center gap-4">
+        <a
+          href="/"
+          class="inline-block px-6 py-3 bg-[#ffcc66] text-[#1C1C1C] rounded-md font-semibold hover:bg-[#eab308] transition"
+        >
+          Ir al inicio
+        </a>
+        <a
+          href="/propiedades"
+          class="inline-block px-6 py-3 border border-[#ffcc66] text-[#ffcc66] rounded-md font-medium hover:bg-[#ffcc66]/10 transition"
+        >
+          Ver propiedades
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
