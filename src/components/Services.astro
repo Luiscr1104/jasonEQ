@@ -1,11 +1,10 @@
 ---
-import { Check, ArrowUpRight } from '@/components/icons';
+import { Check, ArrowUpRight } from "@/components/icons";
 ---
 
-<section id="servicios" class="py-20 bg-white mt-20">
+<section id="servicios" class="py-20 bg-background mt-20">
   <div class="container px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
       <!-- Imagen y tarjeta -->
       <div class="lg:col-span-5">
         <div class="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
@@ -15,15 +14,19 @@ import { Check, ArrowUpRight } from '@/components/icons';
             class="w-full h-full object-cover"
             loading="eager"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+          >
+          </div>
           <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
             <div class="flex items-center gap-2 mb-2">
-              <div class="h-2 w-2 rounded-full bg-advisor-teal"></div>
+              <div class="h-2 w-2 rounded-full bg-primary"></div>
               <span class="text-sm font-medium">Asesor Certificado</span>
             </div>
             <h3 class="text-2xl font-serif font-bold">Jason Castro</h3>
             <p class="text-white/80">
-              Especialista en terrenos de inversión con más de 5 años de experiencia
+              Especialista en terrenos de inversión con más de 5 años de
+              experiencia
             </p>
           </div>
         </div>
@@ -31,70 +34,67 @@ import { Check, ArrowUpRight } from '@/components/icons';
 
       <!-- Texto y beneficios -->
       <div class="lg:col-span-7 space-y-6">
-        <span class="inline-block text-advisor-teal font-medium mb-2">MIS SERVICIOS</span>
-        <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-advisor-slate">
+        <span class="inline-block text-primary font-medium mb-2"
+          >MIS SERVICIOS</span
+        >
+
+        <h2
+          class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-foreground"
+        >
           Mis servicios como
           <span class="relative inline-block">
-            <span class="absolute bottom-2 left-0 w-full h-3 bg-advisor-teal/20 -z-10 rounded"></span>
+            <span
+              class="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -z-10 rounded"
+            ></span>
             <span class="relative">asesor independiente</span>
           </span>
         </h2>
-        <p class="text-lg">
-          Como asesor inmobiliario independiente autorizado por Grupo Ecoquintas, te ofrezco un servicio personalizado
-          para que encuentres el terreno ideal para tu inversión o proyecto.
+
+        <p class="text-lg text-muted-foreground">
+          Como asesor inmobiliario independiente autorizado por Grupo
+          Ecoquintas, te ofrezco un servicio personalizado para que encuentres
+          el terreno ideal para tu inversión o proyecto.
         </p>
 
         <!-- Lista de servicios -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-advisor-teal/20 transition-colors">
-            <div class="flex gap-3 mb-4">
-              <Check class="h-6 w-6 text-advisor-teal flex-shrink-0" />
-              <h3 class="font-medium text-lg">Asesoría personalizada</h3>
-            </div>
-            <p class="text-muted-foreground ml-9">
-              Te ayudo a identificar el terreno que mejor se adapte a tus necesidades y presupuesto.
-            </p>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-advisor-teal/20 transition-colors">
-            <div class="flex gap-3 mb-4">
-              <Check class="h-6 w-6 text-advisor-teal flex-shrink-0" />
-              <h3 class="font-medium text-lg">Visitas guiadas</h3>
-            </div>
-            <p class="text-muted-foreground ml-9">
-              Te acompaño personalmente a conocer los terrenos que te interesen.
-            </p>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-advisor-teal/20 transition-colors">
-            <div class="flex gap-3 mb-4">
-              <Check class="h-6 w-6 text-advisor-teal flex-shrink-0" />
-              <h3 class="font-medium text-lg">Gestión de trámites</h3>
-            </div>
-            <p class="text-muted-foreground ml-9">
-              Te ayudo con toda la documentación y trámites necesarios para la compra.
-            </p>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-advisor-teal/20 transition-colors">
-            <div class="flex gap-3 mb-4">
-              <Check class="h-6 w-6 text-advisor-teal flex-shrink-0" />
-              <h3 class="font-medium text-lg">Asesoría financiera</h3>
-            </div>
-            <p class="text-muted-foreground ml-9">
-              Te oriento sobre las mejores opciones de financiamiento disponibles.
-            </p>
-          </div>
+          {
+            [
+              "Asesoría personalizada",
+              "Visitas guiadas",
+              "Gestión de trámites",
+              "Asesoría financiera",
+            ].map((titulo, index) => (
+              <div class="bg-muted p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
+                <div class="flex gap-3 mb-4">
+                  <Check class="h-6 w-6 text-primary flex-shrink-0" />
+                  <h3 class="font-medium text-lg">{titulo}</h3>
+                </div>
+                <p class="text-muted-foreground ml-9">
+                  {
+                    [
+                      "Te ayudo a identificar el terreno que mejor se adapte a tus necesidades y presupuesto.",
+                      "Te acompaño personalmente a conocer los terrenos que te interesen.",
+                      "Te ayudo con toda la documentación y trámites necesarios para la compra.",
+                      "Te oriento sobre las mejores opciones de financiamiento disponibles.",
+                    ][index]
+                  }
+                </p>
+              </div>
+            ))
+          }
         </div>
 
         <!-- Botón CTA -->
         <div class="pt-6">
           <a
             href="#contacto"
-            class="inline-flex items-center gap-2 bg-advisor-teal hover:bg-advisor-teal-dark text-white px-6 py-3 rounded-md text-base font-medium transition-transform duration-200 group"
+            class="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-6 py-3 rounded-md text-base font-medium transition-transform duration-200 group"
           >
             <span>Agenda una consulta gratuita</span>
-            <ArrowUpRight class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight
+              class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </a>
         </div>
       </div>

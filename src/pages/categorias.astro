@@ -9,10 +9,16 @@ const categories: EcwidCategory[] = await fetchEcwidCategories();
 ---
 
 <BaseLayout title="Categorías en venta | Grupo Ecoquintas">
-  <section class="max-w-6xl mx-auto px-6 m-32">
-    <h1 class="text-3xl font-bold mb-8 text-center">
-      Explorá nuestras categorías
-    </h1>
+  <section class="max-w-6xl mx-auto px-6 pt-28 pb-20">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-serif font-bold tracking-tight text-foreground">
+        Explorá nuestras <span class="text-primary">categorías</span>
+      </h1>
+      <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+        Elegí entre nuestros distintos proyectos de inversión, todos 100%
+        financiables sin prima ni fiador.
+      </p>
+    </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       {
@@ -23,7 +29,7 @@ const categories: EcwidCategory[] = await fetchEcwidCategories();
             category.imageUrl;
 
           return (
-            <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+            <div class="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
               {image ? (
                 <img
                   src={image}
@@ -31,18 +37,18 @@ const categories: EcwidCategory[] = await fetchEcwidCategories();
                   class="h-48 w-full object-cover"
                 />
               ) : (
-                <div class="h-48 w-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
+                <div class="h-48 w-full bg-muted flex items-center justify-center text-muted-foreground text-sm">
                   Sin imagen
                 </div>
               )}
 
               <div class="p-5 flex flex-col justify-between flex-grow">
                 <div>
-                  <h2 class="text-xl font-bold text-gray-800 mb-1">
+                  <h2 class="text-xl font-bold text-foreground mb-1">
                     {category.name}
                   </h2>
                   {category.productCount > 0 && (
-                    <p class="text-sm text-gray-500">
+                    <p class="text-sm text-muted-foreground">
                       {category.productCount} propiedades
                     </p>
                   )}
@@ -50,7 +56,7 @@ const categories: EcwidCategory[] = await fetchEcwidCategories();
 
                 <a
                   href={`/categorias/${category.id}`}
-                  class="mt-4 text-center text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-md transition-colors"
+                  class="mt-4 text-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded-md transition-colors"
                 >
                   Ver propiedades
                 </a>

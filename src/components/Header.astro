@@ -7,87 +7,64 @@ import { PhoneCall, Menu } from "@/components/icons";
   class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
 >
   <div class="container flex h-16 items-center justify-between">
-    <div class="flex items-center gap-2">
-      <a
-        href="/"
-        class="font-serif text-2xl font-bold text-[color:var(--advisor-slate)] ml-4"
-      >
-        Jasón Castro
-        <span class="text-sm font-normal ml-2 text-muted-foreground"
-          >Asesor Inmobiliario</span
-        >
+    <!-- Branding -->
+    <div class="flex items-center gap-3 ml-4">
+      <a href="/" class="flex items-center gap-2">
+        <img
+          src="/logo.png"
+          alt="Jason Castro"
+          class="w-10 h-10 shadow border border-white"
+        />
+        <span class="flex flex-col leading-tight">
+          <span class="text-base font-semibold text-secondary"
+            >Jason Castro</span
+          >
+          <span class="text-xs text-muted-foreground">Asesor Inmobiliario</span>
+        </span>
       </a>
     </div>
 
-    <!-- Menú Mobile: solo visible en móviles, no funcional por ahora sin JS -->
+    <!-- Menú Mobile -->
     <button
-      class="lg:hidden p-2 rounded-md hover:bg-advisor-teal/5"
+      class="lg:hidden p-2 rounded-md hover:bg-primary/10"
       aria-label="Abrir menú"
     >
-      <Menu class="size-6 text-advisor-slate" />
+      <Menu class="size-6 text-secondary" />
     </button>
 
     <!-- Menú Desktop -->
     <nav class="hidden lg:flex items-center gap-8">
-      <a
-        href="/#categories"
-        class="text-sm font-medium transition-colors hover:text-advisor-teal relative group"
-      >
-        Terrenos
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"
-        ></span>
-      </a>
-      <a
-        href="/#beneficios"
-        class="text-sm font-medium transition-colors hover:text-advisor-teal relative group"
-      >
-        Beneficios
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"
-        ></span>
-      </a>
-      <a
-        href="/#servicios"
-        class="text-sm font-medium transition-colors hover:text-advisor-teal relative group"
-      >
-        Mis Servicios
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"
-        ></span>
-      </a>
-      <a
-        href="/#testimonios"
-        class="text-sm font-medium transition-colors hover:text-advisor-teal relative group"
-      >
-        Testimonios
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"
-        ></span>
-      </a>
-      <a
-        href="/#contacto"
-        class="text-sm font-medium transition-colors hover:text-advisor-teal relative group"
-      >
-        Contacto
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-advisor-teal transition-all group-hover:w-full"
-        ></span>
-      </a>
+      {
+        [
+          ["Terrenos", "#categories"],
+          ["Beneficios", "#beneficios"],
+          ["Mis Servicios", "#servicios"],
+          ["Testimonios", "#testimonios"],
+          ["Contacto", "#contacto"],
+        ].map(([label, href]) => (
+          <a
+            href={`/${href}`}
+            class="text-sm font-bold transition-colors hover:text-primary relative group"
+          >
+            {label}
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+          </a>
+        ))
+      }
     </nav>
 
-    <!-- Botones -->
+    <!-- Acciones -->
     <div class="hidden md:flex items-center gap-4">
       <a
-        href="tel:+506 8722 5012"
-        class="flex items-center gap-2 border text-sm px-4 py-2 rounded-md border-advisor-teal/20 text-[color:var(--advisor-slate)] hover:bg-advisor-teal/5"
+        href="tel:+50660637256"
+        class="flex items-center gap-2 border text-sm px-4 py-2 rounded-md border-primary/30 text-secondary hover:bg-primary/10"
       >
-        <PhoneCall class="h-4 w-4 text-advisor-teal" />
+        <PhoneCall class="h-4 w-4 text-primary" />
         <span>+506 6063 7256</span>
       </a>
       <a
         href="/categorias"
-        class="bg-advisor-teal hover:bg-[color:var(--advisor-teal-dark)] text-white px-4 py-2 rounded-md text-sm"
+        class="bg-primary hover:bg-primary/90 text-white text-base font-bold px-6 py-3 rounded-md shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
       >
         Tienda
       </a>

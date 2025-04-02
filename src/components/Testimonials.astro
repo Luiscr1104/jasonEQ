@@ -1,7 +1,6 @@
 ---
 import { Star } from '@/components/icons';
 
-
 const testimonials = [
   {
     id: 1,
@@ -30,13 +29,13 @@ const testimonials = [
 ];
 ---
 
-<section id="testimonios" class="py-20 bg-gray-50">
+<section id="testimonios" class="py-20 bg-[#FAFAFA]">
   <div class="container px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
     <!-- Encabezado -->
     <div class="text-center mb-16">
-      <span class="inline-block text-advisor-teal font-medium mb-2">EXPERIENCIAS</span>
-      <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-advisor-slate">
-        Lo que dicen <span class="text-advisor-teal">mis clientes</span>
+      <span class="inline-block text-primary font-medium mb-2">EXPERIENCIAS</span>
+      <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
+        Lo que dicen <span class="text-primary">mis clientes</span>
       </h2>
       <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
         Experiencias de quienes ya han confiado en mi asesoría para adquirir terrenos de Grupo Ecoquintas.
@@ -47,27 +46,27 @@ const testimonials = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {testimonials.map((testimonial, index) => (
         <div
-          class={`bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm ${
+          class={`bg-white rounded-2xl border border-border overflow-hidden shadow-sm ${
             index === 1 ? 'md:-mt-8' : ''
           }`}
         >
           <div class="pt-8 px-6 relative">
             <div class="flex mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} class="h-5 w-5 fill-advisor-teal text-advisor-teal" />
+                <Star key={i} class="h-5 w-5 fill-primary text-primary" />
               ))}
             </div>
-            <p class="text-advisor-slate relative z-10">"{testimonial.content}"</p>
+            <p class="text-foreground relative z-10">"{testimonial.content}"</p>
           </div>
 
-          <div class="border-t px-6 pt-6 pb-8 mt-6">
+          <div class="border-t border-border px-6 pt-6 pb-8 mt-6">
             <div class="flex items-center gap-4">
               <!-- Avatar con iniciales -->
-              <div class="w-10 h-10 flex items-center justify-center rounded-full bg-advisor-teal text-white text-sm font-semibold">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white text-sm font-semibold">
                 {testimonial.avatar}
               </div>
               <div>
-                <p class="font-medium text-advisor-slate">{testimonial.author}</p>
+                <p class="font-medium text-foreground">{testimonial.author}</p>
                 <p class="text-sm text-muted-foreground">{testimonial.role}</p>
               </div>
             </div>

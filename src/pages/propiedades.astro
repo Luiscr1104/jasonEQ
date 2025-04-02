@@ -11,16 +11,16 @@ const products: EcwidProduct[] = await fetchEcwidProducts();
 <BaseLayout title="Propiedades en venta | Grupo Ecoquintas">
   <div class="text-center mb-16 mt-20">
     <div
-      class="inline-flex items-center rounded-full border border-advisor-teal/20 px-3 py-1 text-sm text-advisor-teal mb-4 bg-advisor-teal/5"
+      class="inline-flex items-center rounded-full border border-primary/20 px-3 py-1 text-sm text-primary mb-4 bg-primary/10"
     >
       <span class="font-medium">Terrenos oficiales</span>
       <span class="mx-2">•</span>
-      <span class="text-advisor-slate">Grupo Ecoquintas</span>
+      <span class="text-foreground">Grupo Ecoquintas</span>
     </div>
     <h2
-      class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-advisor-slate"
+      class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-foreground"
     >
-      Terrenos <span class="text-advisor-teal">Disponibles</span>
+      Terrenos <span class="text-primary">Disponibles</span>
     </h2>
     <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
       Te ayudo a encontrar el terreno ideal de Grupo Ecoquintas que se adapte a
@@ -35,7 +35,7 @@ const products: EcwidProduct[] = await fetchEcwidProducts();
       products.map((product) => (
         <a
           href={`/propiedades/${product.id}`}
-          class="group block bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+          class="group block bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
         >
           <div class="relative h-56 w-full overflow-hidden">
             <img
@@ -43,22 +43,22 @@ const products: EcwidProduct[] = await fetchEcwidProducts();
               alt={product.name}
               class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
             />
-            <span class="absolute top-3 left-3 bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+            <span class="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
               Disponible
             </span>
           </div>
           <div class="p-5 flex flex-col justify-between h-full">
             <div>
-              <h3 class="text-lg font-bold text-gray-800 group-hover:text-teal-700 transition-colors">
+              <h3 class="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                 {product.name}
               </h3>
-              <p class="text-sm text-gray-500 mt-1">{product.sku}</p>
+              <p class="text-sm text-muted-foreground mt-1">{product.sku}</p>
             </div>
             <div class="mt-4 flex items-center justify-between">
-              <p class="text-lg font-semibold text-teal-600">
+              <p class="text-lg font-semibold text-primary">
                 {product.price} {product.currency}
               </p>
-              <span class="text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-md transition-colors">
+              <span class="text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded-md transition-colors">
                 Ver más
               </span>
             </div>

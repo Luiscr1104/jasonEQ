@@ -1,36 +1,49 @@
 @import "tailwindcss";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/600.css";
 
 /* 🌈 Variables CSS */
 :root {
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  --ring: 220 13% 91%;
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --font-sans: "Montserrat", sans-serif;
 
-  --primary: 174 100% 29%;
-  --primary-foreground: 210 40% 98%;
+  /* BASE */
+  --background: 0 0% 100%; /* Blanco */
+  --foreground: 0 0% 29%; /* Gris oscuro del texto */
 
-  --secondary: 240 5.9% 10%;
-  --secondary-foreground: 0 0% 98%;
+  --border: 0 0% 85%;
+  --input: 0 0% 85%;
+  --ring: 45 45% 60%; /* Dorado como highlight */
 
+  /* 🎯 PALETA DE MARCA */
+  --primary: 45 45% 60%; /* Dorado Jason */
+  --primary-foreground: 0 0% 100%; /* Texto en botón dorado: blanco */
+
+  --secondary: 187 27% 22%; /* Teal oscuro */
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 224 47% 31%; /* Azul profesional */
+  --accent-foreground: 0 0% 100%;
+
+  --secondary-dark: 222 34% 10%; /* Azul marino profundo */
+  --text-dark: 0 0% 0%; /* Negro puro */
+
+  /* OTROS */
   --destructive: 0 100% 50%;
   --destructive-foreground: 210 40% 98%;
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-
-  --accent: 174 60% 48%;
-  --accent-foreground: 0 0% 100%;
+  --muted: 200 15% 85%;
+  --muted-foreground: 200 10% 40%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --popover-foreground: 0 0% 29%;
 
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 0 0% 29%;
 
   --radius: 0.5rem;
 
+  /* OPCIONAL: conserva por compatibilidad si ya las usas */
   --advisor-slate: #334155;
   --advisor-slate-light: #475569;
   --advisor-slate-dark: #1e293b;
@@ -186,6 +199,7 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: "Montserrat", sans-serif;
   }
 
   h1,

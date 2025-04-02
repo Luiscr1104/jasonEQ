@@ -2,6 +2,7 @@
   class="relative overflow-hidden bg-background"
   aria-labelledby="hero-title"
 >
+  <!-- Imagen de fondo con gradiente -->
   <div
     class="absolute inset-0 z-0 animate-fade-in"
     role="img"
@@ -17,6 +18,7 @@
     </div>
   </div>
 
+  <!-- Contenido -->
   <div
     class="relative z-10 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto py-20 sm:py-24 md:py-32 lg:py-40 animate-fade-up"
   >
@@ -26,9 +28,10 @@
         class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white backdrop-blur-sm"
       >
         <span
-          class="mr-2 rounded-full bg-advisor-teal px-2 py-0.5 text-xs font-medium"
-          >Oficial</span
+          class="mr-2 rounded-full bg-primary px-2 py-0.5 text-xs font-medium"
         >
+          Oficial
+        </span>
         Asesor Autorizado de Grupo Ecoquintas
       </div>
 
@@ -38,7 +41,7 @@
         class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white drop-shadow-md sm:drop-shadow-lg leading-tight"
       >
         <strong>Terrenos 100% financiados</strong> con tu <span
-          class="text-advisor-teal">asesor personal</span
+          class="text-primary">asesor personal</span
         > de Grupo Ecoquintas
       </h1>
 
@@ -47,31 +50,22 @@
         class="flex flex-wrap gap-3 mt-6 list-none"
         aria-label="Beneficios principales"
       >
-        <li
-          class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition"
-        >
-          100% financiadas
-        </li>
-        <li
-          class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition"
-        >
-          Sin prima
-        </li>
-        <li
-          class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition"
-        >
-          Sin fiador
-        </li>
+        {
+          ["100% financiadas", "Sin prima", "Sin fiador"].map((benefit) => (
+            <li class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition">
+              {benefit}
+            </li>
+          ))
+        }
       </ul>
 
       <!-- Descripción -->
       <p
         class="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4"
       >
-        Asesoría personalizada y gratuita para invertir en terrenos en <strong
-          >La Fortuna de San Carlos</strong
-        >. Accedé a lotes con precios exclusivos, excelente ubicación y la mejor
-        financiación del país.
+        Asesoría personalizada y gratuita para invertir en terrenos en
+        <strong> La Fortuna de San Carlos</strong>. Accedé a lotes con precios
+        exclusivos, excelente ubicación y la mejor financiación del país.
       </p>
 
       <!-- Botones -->
@@ -81,7 +75,7 @@
       >
         <a
           href="/propiedades"
-          class="text-white bg-advisor-teal hover:bg-advisor-teal-dark px-6 py-3 rounded-md text-center text-base font-medium transition-colors duration-200"
+          class="text-white bg-primary hover:bg-primary/80 px-6 py-3 rounded-md text-center text-base font-medium transition-colors duration-200"
         >
           Ver terrenos disponibles
         </a>
@@ -109,6 +103,7 @@
   </div>
 </section>
 
+<!-- Animaciones -->
 <style>
   @keyframes fade-in {
     from {

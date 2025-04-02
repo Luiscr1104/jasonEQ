@@ -9,20 +9,23 @@ import {
 } from "@/components/icons";
 ---
 
-<section id="contacto" class="py-20 bg-advisor-slate text-white">
+<section id="contacto" class="py-20 bg-[#334155] text-white">
   <div class="container px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
       <!-- Información de contacto -->
       <div class="lg:col-span-5">
-        <span class="inline-block text-advisor-teal font-medium mb-2"
+        <span class="inline-block text-[#ffcc66] font-medium mb-2"
           >CONTACTO</span
         >
         <h2
-          class="font-serif text-3xl font-bold tracking-tight sm:text-4xl mb-6"
+          class="font-serif text-3xl font-bold tracking-tight sm:text-4xl mb-6 text-white"
         >
-          ¿Interesado en <span class="text-advisor-teal">invertir</span>?
+          ¿Interesado en <span
+            class="text-[#ffcc66] underline decoration-[#ffcc66]/40 underline-offset-4"
+            >invertir</span
+          >?
         </h2>
-        <p class="text-lg text-white/80 max-w-md mb-12">
+        <p class="text-lg text-white/90 max-w-md mb-12">
           Completa el formulario y me pondré en contacto contigo para brindarte
           toda la información sobre los terrenos de Grupo Ecoquintas.
         </p>
@@ -30,52 +33,56 @@ import {
         <div class="space-y-8">
           <div class="flex items-start gap-4">
             <div
-              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-white"
             >
               <PhoneCall class="h-6 w-6" />
             </div>
             <div>
-              <h3 class="font-medium text-lg">Teléfono</h3>
+              <h3 class="font-medium text-lg text-white">Teléfono</h3>
               <p class="text-white/80">+506 6063-7256</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div
-              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-white"
             >
               <Mail class="h-6 w-6" />
             </div>
             <div>
-              <h3 class="font-medium text-lg">Correo electrónico</h3>
+              <h3 class="font-medium text-lg text-white">Correo electrónico</h3>
               <p class="text-white/80">jcastro@ecoquintas.com</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div
-              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-white"
             >
               <MapPin class="h-6 w-6" />
             </div>
             <div>
-              <h3 class="font-medium text-lg">Oficina</h3>
+              <h3 class="font-medium text-lg text-white">Oficina</h3>
               <p class="text-white/80">
-                2.5km este del parque <br />La Fortuna, San Carlos, Costa Rica
+                2.5km este del parque <br />
+                La Fortuna, San Carlos, Costa Rica
               </p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div
-              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-advisor-teal"
+              class="h-12 w-12 flex items-center justify-center rounded-xl bg-white/10 text-white"
             >
               <Clock class="h-6 w-6" />
             </div>
             <div>
-              <h3 class="font-medium text-lg">Horario de atención</h3>
+              <h3 class="font-medium text-lg text-white">
+                Horario de atención
+              </h3>
               <p class="text-white/80">
-                Lunes a Lunes: 7:00 AM - 6:00 PM<br />Sábados: 7:00 AM - 2:00 PM
+                Lunes a Lunes: 7:00 AM - 6:00 PM<br />
+                Sábados: 7:00 AM - 2:00 PM
               </p>
             </div>
           </div>
@@ -91,7 +98,7 @@ import {
           enctype="application/x-www-form-urlencoded"
           class="bg-white text-foreground p-8 rounded-2xl shadow-lg space-y-6"
         >
-          <h3 class="font-serif text-2xl font-bold mb-4 text-advisor-slate">
+          <h3 class="font-serif text-2xl font-bold mb-4 text-foreground">
             Solicita información
           </h3>
 
@@ -104,7 +111,7 @@ import {
                 id="firstname"
                 name="firstname"
                 required
-                class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+                class="w-full rounded-md border border-border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
@@ -116,7 +123,7 @@ import {
                 id="lastname"
                 name="lastname"
                 required
-                class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+                class="w-full rounded-md border border-border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
           </div>
@@ -129,7 +136,7 @@ import {
               name="phone"
               type="tel"
               required
-              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+              class="w-full rounded-md border border-border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -143,20 +150,20 @@ import {
               name="email"
               type="email"
               required
-              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+              class="w-full rounded-md border border-border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <!-- Tipo de terreno -->
           <div class="space-y-2">
-            <label for="interes" class="text-sm font-medium"
-              >¿Qué tipo de terreno te interesa? *</label
-            >
+            <label for="interes" class="text-sm font-medium">
+              ¿Qué tipo de terreno te interesa? *
+            </label>
             <select
               id="interes"
               name="interes"
               required
-              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+              class="w-full rounded-md border border-border px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary"
             >
               <option disabled selected>Selecciona una opción</option>
               <option value="residencial">Terreno Residencial</option>
@@ -166,15 +173,15 @@ import {
             </select>
           </div>
 
-          <!-- Presupuesto aproximado -->
+          <!-- Presupuesto -->
           <div class="space-y-2">
-            <label for="presupuesto" class="text-sm font-medium"
-              >Presupuesto aproximado</label
-            >
+            <label for="presupuesto" class="text-sm font-medium">
+              Presupuesto aproximado
+            </label>
             <select
               id="presupuesto"
               name="presupuesto"
-              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+              class="w-full rounded-md border border-border px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary"
             >
               <option disabled selected>Selecciona una opción</option>
               <option value="500k-1m">$500,000 - $1,000,000</option>
@@ -186,14 +193,14 @@ import {
 
           <!-- Mensaje -->
           <div class="space-y-2">
-            <label for="message" class="text-sm font-medium"
-              >Mensaje (opcional)</label
-            >
+            <label for="message" class="text-sm font-medium">
+              Mensaje (opcional)
+            </label>
             <textarea
               id="message"
               name="message"
               placeholder="Cuéntame más sobre lo que buscas..."
-              class="w-full rounded-md border border-gray-200 px-3 py-2 text-sm min-h-[100px] focus:outline-none focus:ring-2 focus:ring-advisor-teal"
+              class="w-full rounded-md border border-border px-3 py-2 text-sm min-h-[100px] focus:outline-none focus:ring-2 focus:ring-primary"
             ></textarea>
           </div>
 
@@ -203,7 +210,7 @@ import {
               type="checkbox"
               id="marketing"
               name="marketing"
-              class="mt-1 accent-advisor-teal"
+              class="mt-1 accent-[color:var(--primary)]"
             />
             <label for="marketing" class="text-sm">
               Acepto recibir información sobre terrenos y promociones
@@ -217,7 +224,7 @@ import {
               id="terminos"
               name="terminos"
               required
-              class="mt-1 accent-advisor-teal"
+              class="mt-1 accent-[color:var(--primary)]"
             />
             <label for="terminos" class="text-sm">
               He leído y acepto los términos y condiciones y la política de
@@ -225,18 +232,18 @@ import {
             </label>
           </div>
 
-          <!-- Botón enviar con loader oculto -->
+          <!-- Botón enviar -->
           <div class="relative">
             <button
               type="submit"
-              class="w-full bg-advisor-teal hover:bg-advisor-teal-dark text-white font-medium py-3 rounded-md flex items-center justify-center gap-2 transition-colors"
+              class="w-full bg-primary hover:bg-primary/80 text-white font-medium py-3 rounded-md flex items-center justify-center gap-2 transition-colors"
               id="submitBtn"
             >
               <span>Solicitar información</span>
               <ArrowUpRight class="h-4 w-4" />
             </button>
 
-            <!-- Loader oculto inicialmente -->
+            <!-- Loader -->
             <div
               id="loader"
               class="loader absolute right-4 top-1/2 -translate-y-1/2 hidden"
@@ -244,14 +251,11 @@ import {
             </div>
           </div>
 
-          <!-- Mensaje de éxito -->
+          <!-- Mensajes -->
           <p id="successMessage" class="text-green-600 font-medium hidden">
             ✅ ¡Formulario enviado correctamente!
           </p>
-          <!-- Loader oculto por defecto -->
           <span id="loader" class="loader hidden mx-auto my-4"></span>
-
-          <!-- Mensaje de éxito oculto -->
           <p
             id="successMessage"
             class="hidden text-green-600 text-center font-medium mt-4"

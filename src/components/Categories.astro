@@ -9,18 +9,23 @@ const categories: EcwidCategory[] = await fetchEcwidCategories();
 
 <section class="max-w-6xl mx-auto px-6 mt-20" id="categories">
   <div class="text-center mb-16">
+    <!-- Badge superior -->
     <div
-      class="inline-flex items-center rounded-full border border-advisor-teal/20 px-3 py-1 text-sm text-advisor-teal mb-4 bg-advisor-teal/5"
+      class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 text-primary text-sm px-3 py-1 mb-4"
     >
       <span class="font-medium">Terrenos oficiales</span>
       <span class="mx-2">•</span>
-      <span class="text-advisor-slate">Grupo Ecoquintas</span>
+      <span class="text-secondary">Grupo Ecoquintas</span>
     </div>
+
+    <!-- Título -->
     <h2
-      class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-advisor-slate"
+      class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-secondary"
     >
-      Terrenos <span class="text-advisor-teal">Disponibles</span>
+      Terrenos <span class="text-primary">Disponibles</span>
     </h2>
+
+    <!-- Descripción -->
     <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
       Te ayudo a encontrar el terreno ideal de Grupo Ecoquintas que se adapte a
       tus necesidades y presupuesto.
@@ -49,7 +54,7 @@ const categories: EcwidCategory[] = await fetchEcwidCategories();
 
             <div class="p-5 flex flex-col justify-between flex-grow">
               <div>
-                <h3 class="text-xl font-bold text-gray-800 mb-1">
+                <h3 class="text-xl font-bold text-secondary mb-1">
                   {category.name}
                 </h3>
                 {category.productCount > 0 && (
@@ -61,7 +66,7 @@ const categories: EcwidCategory[] = await fetchEcwidCategories();
 
               <a
                 href={`/categorias/${category.id}`}
-                class="mt-4 text-center text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-md transition-colors"
+                class="mt-4 text-center text-sm font-medium text-white bg-primary hover:bg-primary/80 px-4 py-2 rounded-md transition-colors"
               >
                 Ver propiedades
               </a>
