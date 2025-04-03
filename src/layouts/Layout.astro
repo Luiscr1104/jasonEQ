@@ -5,8 +5,8 @@ import Footer from "@/components/Footer.astro";
 import ChatWidget from "@/components/ChatWidget.astro";
 
 const {
-  title,
-  description = "Terrenos en Venta en La Fortuna",
+  title = "Terrenos en La Fortuna desde ₡30.000/mes | Compra sin bancos",
+  description = "Compra terrenos en La Fortuna con financiamiento directo. Desde ₡30.000 al mes. Sin bancos, sin trámites complejos. Asesoría personalizada con Jason Castro.",
   children,
 } = Astro.props;
 ---
@@ -16,7 +16,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- Google tag (gtag.js) -->
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMJG45547S"
     ></script>
@@ -33,26 +33,15 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>{title}</title>
-    <meta
-      name="description"
-      content={description ||
-        "Encuentra categorías de terrenos en venta en La Fortuna con Grupo Ecoquintas. Opciones residenciales, comerciales, de inversión y más."}
-    />
+    <meta name="description" content={description} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
-    <meta
-      property="og:description"
-      content={description ||
-        "Terrenos en venta organizados por categoría. Elige tu inversión ideal con asesoría personalizada."}
-    />
-    <meta
-      property="og:url"
-      content="https://terrenoslafortunacr.com/categorias"
-    />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://www.terrenoslafortunacr.com" />
     <meta
       property="og:image"
-      content="https://terrenoslafortunacr.com/og-categorias.jpg"
+      content="https://www.terrenoslafortunacr.com/og-categorias.jpg"
     />
     <meta property="og:type" content="website" />
   </head>

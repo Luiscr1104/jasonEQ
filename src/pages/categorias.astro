@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "@/layouts/Layout.astro";
 
-const title = "Categorías de Terrenos en venta en La Fortuna";
+const title =
+  "Categorías de terrenos en La Fortuna | Viví o invertí sin bancos";
 const description =
-  "Encuentra terrenos residenciales, comerciales o para inversión en La Fortuna. Todos con planos listos y financiamiento directo.";
+  "Descubrí las categorías de terrenos disponibles en La Fortuna: residenciales, comerciales, de inversión y más. Elegí el lote perfecto con financiamiento directo y planos listos.";
+const ogUrl = "https://www.terrenoslafortunacr.com/categorias";
+const ogImage = "https://www.terrenoslafortunacr.com/og-categories.png";
 
 import {
   fetchEcwidCategories,
@@ -15,7 +18,7 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
 );
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout {title} {description} {ogUrl} {ogImage}>
   <section class="max-w-6xl mx-auto px-6 pt-28 pb-20">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-serif font-bold tracking-tight text-foreground">
