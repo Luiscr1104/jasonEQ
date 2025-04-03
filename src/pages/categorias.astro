@@ -1,5 +1,10 @@
 ---
 import BaseLayout from "@/layouts/Layout.astro";
+
+const title = "Categorías de Terrenos en venta en La Fortuna";
+const description =
+  "Encuentra terrenos residenciales, comerciales o para inversión en La Fortuna. Todos con planos listos y financiamiento directo.";
+
 import {
   fetchEcwidCategories,
   type EcwidCategory,
@@ -10,7 +15,7 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
 );
 ---
 
-<BaseLayout title="Categorías en venta | Grupo Ecoquintas">
+<BaseLayout {title} {description}>
   <section class="max-w-6xl mx-auto px-6 pt-28 pb-20">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-serif font-bold tracking-tight text-foreground">

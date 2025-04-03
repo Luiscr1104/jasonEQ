@@ -1,4 +1,10 @@
 ---
+const title = "Propiedades en venta en La Fortuna | TerrenosLaFortunaCR.com";
+const description =
+  "Explorá terrenos en venta de Grupo Ecoquintas en La Fortuna. Con planos listos, uso de suelo aprobado y financiamiento sin bancos.";
+const ogUrl = "https://terrenoslafortunacr.com/propiedades";
+const ogImage = "https://terrenoslafortunacr.com/og-propiedades.jpg";
+
 import BaseLayout from "@/layouts/Layout.astro";
 import {
   fetchEcwidProducts,
@@ -8,7 +14,7 @@ import {
 const products: EcwidProduct[] = await fetchEcwidProducts();
 ---
 
-<BaseLayout title="Propiedades en venta | Grupo Ecoquintas">
+<BaseLayout {title} {description} {ogUrl} {ogImage}>
   <div class="text-center mb-16 mt-20">
     <div
       class="inline-flex items-center rounded-full border border-primary/20 px-3 py-1 text-sm text-primary mb-4 bg-primary/10"
