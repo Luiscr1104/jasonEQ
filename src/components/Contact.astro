@@ -266,6 +266,7 @@ import {
             <span id="toast-message"></span>
           </div>
         </form>
+
         <script>
           document.addEventListener("DOMContentLoaded", () => {
             const form = document.querySelector("form");
@@ -310,6 +311,18 @@ import {
               const firstname = formData.get("firstname") || "";
               const lastname = formData.get("lastname") || "";
               formData.set("fullname", `${firstname} ${lastname}`);
+
+              // 🔥 Envío del evento GA4
+              if (
+                typeof window !== "undefined" &&
+                typeof window.gtag === "function"
+              ) {
+                window.gtag("event", "formulario_contacto_enviado", {
+                  event_category: "formularios",
+                  event_label: "Formulario principal - Solicitar información",
+                  value: 1,
+                });
+              }
 
               try {
                 const response = await fetch("/api/contacto", {
