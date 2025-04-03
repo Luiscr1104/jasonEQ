@@ -1,5 +1,4 @@
 ---
-// No script necesario, todo es HTML + Tailwind
 import { PhoneCall, Menu } from "@/components/icons";
 ---
 
@@ -9,18 +8,22 @@ import { PhoneCall, Menu } from "@/components/icons";
   <div class="container flex h-16 items-center justify-between">
     <!-- Branding -->
     <div class="flex items-center gap-3 ml-4">
-      <a href="/" class="flex items-center gap-2">
+      <a href="/" class="flex items-center gap-2" aria-label="Ir a inicio">
         <img
           src="/logo.png"
-          alt="Jason Castro"
+          alt="Logo de Jason Castro, asesor inmobiliario en La Fortuna"
           class="w-10 h-10 shadow border border-white"
+          fetchpriority="high"
+          decoding="async"
         />
-        <span class="flex flex-col leading-tight">
-          <span class="text-base font-semibold text-secondary"
-            >Jason Castro</span
-          >
-          <span class="text-xs text-muted-foreground">Asesor Inmobiliario</span>
-        </span>
+        <div class="flex flex-col leading-tight">
+          <span class="text-base font-semibold text-secondary">
+            Jason Castro
+          </span>
+          <span class="text-xs text-muted-foreground">
+            Asesor Inmobiliario
+          </span>
+        </div>
       </a>
     </div>
 
