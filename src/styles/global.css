@@ -357,3 +357,19 @@
 .toast.hidden {
   display: none;
 }
+
+.prose h2 {
+  @apply font-serif text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-4 mt-10;
+}
+
+.prose p {
+  @apply text-[15px] text-[#334155] mb-5 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc list-inside text-[#334155] mb-6;
+}
+
+.prose a {
+  @apply text-[#ffcc66] hover:text-[#eab308] underline;
+}

@@ -1,0 +1,34 @@
+---
+import BlogCard, { type BlogPost } from "@/components/BlogCard.astro";
+
+import { blogPosts } from "@/data/blogPosts";
+---
+
+<section class="py-20 bg-[#fefefe]" id="blog">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2
+        class="text-3xl sm:text-4xl font-bold text-[#1C1C1C] font-[Montserrat]"
+      >
+        Últimos artículos del blog
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Consejos de inversión, requisitos legales y más sobre cómo comprar tu
+        terreno ideal en Costa Rica.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">  
+      {blogPosts.map((post) => <BlogCard post={post} />)}
+    </div>
+
+    <div class="flex justify-center mt-10">
+      <a
+        href="/blog"
+        class="text-sm font-medium text-[#1C1C1C] border border-[#ffcc66] px-5 py-2 rounded-md hover:bg-[#ffcc66] transition"
+      >
+        Ver todos los artículos
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+// Tipado del post
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: string;
+  slug: string;
+}
+
+export interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+---
+
+<article
+  class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all bg-white border border-border"
+>
+  <div class="relative h-48 w-full overflow-hidden">
+    <img
+      src={post.image || "/images/galeria/ecoquintas-1.webp"}
+      alt={post.title}
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+    <div
+      class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide font-semibold"
+    >
+      {post.category}
+    </div>
+  </div>
+  <div class="p-5 flex flex-col gap-2">
+    <h3 class="text-lg font-bold text-foreground line-clamp-2">{post.title}</h3>
+    <p class="text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
+    <div
+      class="text-xs text-muted-foreground flex items-center justify-between mt-2"
+    >
+      <span>{post.date}</span>
+      <span>{post.readTime}</span>
+    </div>
+    <a
+      href={`/blog/${post.slug}`}
+      class="mt-3 inline-block text-center font-medium bg-primary text-white py-2 px-4 rounded-md hover:bg-yellow-500 transition"
+    >
+      Leer más
+    </a>
+  </div>
+</article>
