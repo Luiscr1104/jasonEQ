@@ -86,8 +86,8 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
       </a>
     </nav>
 
-    <!-- Acciones Desktop -->
-    <div class="hidden lg:flex items-center gap-4 ml-4">
+    <!-- Acciones Desktop ocultas en pantallas menores a lg -->
+    <div class="hidden xl:flex items-center gap-4 ml-4">
       <a
         href="https://wa.me/50660637256?text=Hola%20Jason%2C%20vi%20tu%20sitio%20web%20y%20estoy%20interesado%20en%20terrenos."
         target="_blank"
@@ -106,25 +106,25 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
     </div>
 
     <!-- Menú Mobile Button -->
-    <div class="ml-auto lg:hidden">
+    <div class="ml-auto xl:hidden">
       <button
         class="p-2 rounded-md hover:bg-primary/10"
         aria-label="Abrir menú"
         @click="expanded = !expanded"
       >
-        <span x-show="!expanded" x-cloak>
+        <template x-if="!expanded">
           <Menu class="size-6 text-secondary" />
-        </span>
-        <span x-show="expanded" x-cloak>
+        </template>
+        <template x-if="expanded">
           <X class="size-6 text-secondary" />
-        </span>
+        </template>
       </button>
     </div>
   </div>
 
   <!-- Menú Mobile Dropdown -->
   <nav
-    class="lg:hidden absolute top-full left-0 right-0 bg-white shadow-md overflow-hidden transition-all duration-300"
+    class="xl:hidden absolute top-full left-0 right-0 bg-white shadow-md overflow-hidden transition-all duration-300"
     x-show="expanded"
     x-collapse
   >
@@ -163,7 +163,7 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
         href="https://wa.me/50660637256?text=Hola%20Jason%2C%20vi%20tu%20sitio%20web%20y%20estoy%20interesado%20en%20terrenos."
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-md shadow-md transition-all duration-300 hover:scale-105"
+        class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-md shadow-md transition-all duration-300 hover:scale-105 mt-2"
       >
         <WAIcon class="h-5 w-5 text-white" />
         <span>WhatsApp</span>
