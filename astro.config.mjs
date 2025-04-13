@@ -10,7 +10,11 @@ import alpinejs from "@astrojs/alpinejs";
 
 export default defineConfig({
   site: "https://www.terrenoslafortunacr.com",
-  integrations: [sitemap(), markdoc(), alpinejs()],
+  integrations: [
+    sitemap(),
+    markdoc(),
+    alpinejs({ entrypoint: "/src/entrypoint" }),
+  ],
   output: "server",
   adapter: vercel(),
   vite: {
