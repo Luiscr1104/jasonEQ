@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Evita que bots indexen rutas irrelevantes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /drafts/
+Disallow: /private/
+
+# Sitemap para guiar mejor el rastreo
+Sitemap: https://www.terrenoslafortunacr.com/sitemap.xml
