@@ -11,6 +11,9 @@ importers:
       '@alpinejs/collapse':
         specifier: ^3.14.9
         version: 3.14.9
+      '@astrojs/alpinejs':
+        specifier: ^0.4.5
+        version: 0.4.5(@types/alpinejs@3.13.11)(alpinejs@3.14.9)
       '@astrojs/markdoc':
         specifier: ^0.13.3
         version: 0.13.3(astro@5.5.4(@types/node@22.13.13)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.37.0)(typescript@5.8.2))(react@19.1.0)
@@ -26,6 +29,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.16
         version: 4.0.16(vite@6.2.3(@types/node@22.13.13)(jiti@2.4.2)(lightningcss@1.29.2))
+      '@types/alpinejs':
+        specifier: ^3.13.11
+        version: 3.13.11
       alpinejs:
         specifier: ^3.14.9
         version: 3.14.9
@@ -65,6 +71,12 @@ packages:
 
   '@alpinejs/collapse@3.14.9':
     resolution: {integrity: sha512-cUjbBVo4KR/CfFg0cLB+Q7a8SnjmD4MdxmtZvFjh25Dlf/ZWYPSPx/28b+aAykuX/SUoDPQRmdFiVVvq+iILHw==}
+
+  '@astrojs/alpinejs@0.4.5':
+    resolution: {integrity: sha512-BgDVf7J5P+oXMNwWgnLvvzBMGiYxIN4/zOOySj4s/zTokiw579wMdjIke5HP7CX6ylo+u7eWEnQMMCVbF5vWfg==}
+    peerDependencies:
+      '@types/alpinejs': ^3.0.0
+      alpinejs: ^3.0.0
 
   '@astrojs/compiler@2.11.0':
     resolution: {integrity: sha512-zZOO7i+JhojO8qmlyR/URui6LyfHJY6m+L9nwyX5GiKD78YoRaZ5tzz6X0fkl+5bD3uwlDHayf6Oe8Fu36RKNg==}
@@ -629,6 +641,9 @@ packages:
     resolution: {integrity: sha512-6mZVWhAyjVNMMRw0Pvv2RZfTttjsAClU8HouLNZbeLbX0yURMa0UYEY/qS4dB1tZlRpiDBnCLsGsWbxEyIjW6A==}
     peerDependencies:
       vite: ^5.2.0 || ^6
+
+  '@types/alpinejs@3.13.11':
+    resolution: {integrity: sha512-3KhGkDixCPiLdL3Z/ok1GxHwLxEWqQOKJccgaQL01wc0EVM2tCTaqlC3NIedmxAXkVzt/V6VTM8qPgnOHKJ1MA==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -2185,6 +2200,11 @@ snapshots:
 
   '@alpinejs/collapse@3.14.9': {}
 
+  '@astrojs/alpinejs@0.4.5(@types/alpinejs@3.13.11)(alpinejs@3.14.9)':
+    dependencies:
+      '@types/alpinejs': 3.13.11
+      alpinejs: 3.14.9
+
   '@astrojs/compiler@2.11.0': {}
 
   '@astrojs/internal-helpers@0.6.1': {}
@@ -2660,6 +2680,8 @@ snapshots:
       lightningcss: 1.29.2
       tailwindcss: 4.0.16
       vite: 6.2.3(@types/node@22.13.13)(jiti@2.4.2)(lightningcss@1.29.2)
+
+  '@types/alpinejs@3.13.11': {}
 
   '@types/debug@4.1.12':
     dependencies:

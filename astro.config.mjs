@@ -6,9 +6,11 @@ import vercel from "@astrojs/vercel";
 
 import markdoc from "@astrojs/markdoc";
 
+import alpinejs from "@astrojs/alpinejs";
+
 export default defineConfig({
   site: "https://www.terrenoslafortunacr.com",
-  integrations: [sitemap(), markdoc()],
+  integrations: [sitemap(), markdoc(), alpinejs()],
   output: "server",
   adapter: vercel(),
   vite: {
