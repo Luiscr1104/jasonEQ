@@ -1,18 +1,19 @@
 ---
-import { PhoneCall, Menu } from "@/components/icons";
+import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
 ---
 
 <header
   class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+  x-data="{ expanded: false }"
 >
-  <div class="container flex h-16 items-center justify-between">
+  <div class="container flex h-16 items-center relative">
     <!-- Branding -->
     <div class="flex items-center gap-3 ml-4">
       <a href="/" class="flex items-center gap-2" aria-label="Ir a inicio">
         <img
-          src="/logo.png"
+          src="/isotipo.png"
           alt="Logo de Jason Castro, asesor inmobiliario en La Fortuna"
-          class="w-10 h-10 shadow border border-white"
+          class="size-12 shadow"
           fetchpriority="high"
           decoding="async"
         />
@@ -27,44 +28,74 @@ import { PhoneCall, Menu } from "@/components/icons";
       </a>
     </div>
 
-    <!-- Menú Mobile -->
-    <button
-      class="lg:hidden p-2 rounded-md hover:bg-primary/10"
-      aria-label="Abrir menú"
-    >
-      <Menu class="size-6 text-secondary" />
-    </button>
-
     <!-- Menú Desktop -->
-    <nav class="hidden lg:flex items-center gap-8">
-      {
-        [
-          ["Terrenos", "#categories"],
-          ["Beneficios", "#beneficios"],
-          ["Mis Servicios", "#servicios"],
-          ["Testimonios", "#testimonios"],
-          ["Contacto", "#contacto"],
-          ["Blog", "#blog"],
-        ].map(([label, href]) => (
-          <a
-            href={`/${href}`}
-            class="text-sm font-bold transition-colors hover:text-primary relative group"
-          >
-            {label}
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-          </a>
-        ))
-      }
+    <nav class="hidden lg:flex items-center gap-8 m-auto">
+      <a
+        href="/#categories"
+        class="text-sm font-bold transition-colors hover:text-primary relative group"
+      >
+        Terrenos
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="/#beneficios"
+        class="text-sm font-bold transition-colors hover:text-primary relative group"
+      >
+        Beneficios
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="/#servicios"
+        class="text-sm font-bold transition-colors hover:text-primary relative group"
+      >
+        Mis Servicios
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="/#testimonios"
+        class="text-sm font-bold transition-colors hover:text-primary relative group"
+      >
+        Testimonios
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="/#contacto"
+        class="text-sm font-bold transition-colors hover:text-primary relative group"
+      >
+        Contacto
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="/#blog"
+        class="text-sm font-bold transition-colors hover:text-primary relative group"
+      >
+        Blog
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"
+        ></span>
+      </a>
     </nav>
 
-    <!-- Acciones -->
-    <div class="hidden md:flex items-center gap-4">
+    <!-- Acciones Desktop -->
+    <div class="hidden lg:flex items-center gap-4 ml-4">
       <a
-        href="tel:+50660637256"
-        class="flex items-center gap-2 border text-sm px-4 py-2 rounded-md border-primary/30 text-secondary hover:bg-primary/10"
+        href="https://wa.me/50660637256?text=Hola%20Jason%2C%20vi%20tu%20sitio%20web%20y%20estoy%20interesado%20en%20terrenos."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-md shadow-md transition-all duration-300 hover:scale-105"
       >
-        <PhoneCall class="h-4 w-4 text-primary" />
-        <span>+506 6063 7256</span>
+        <WAIcon class="h-5 w-5 text-white" />
+        <span>WhatsApp</span>
       </a>
       <a
         href="/categorias"
@@ -73,5 +104,91 @@ import { PhoneCall, Menu } from "@/components/icons";
         Tienda
       </a>
     </div>
+
+    <!-- Menú Mobile Button -->
+    <div class="ml-auto lg:hidden">
+      <button
+        class="p-2 rounded-md hover:bg-primary/10"
+        aria-label="Abrir menú"
+        @click="expanded = !expanded"
+      >
+        <span x-show="!expanded" x-cloak>
+          <Menu class="size-6 text-secondary" />
+        </span>
+        <span x-show="expanded" x-cloak>
+          <X class="size-6 text-secondary" />
+        </span>
+      </button>
+    </div>
   </div>
+
+  <!-- Menú Mobile Dropdown -->
+  <nav
+    class="lg:hidden absolute top-full left-0 right-0 bg-white shadow-md overflow-hidden transition-all duration-300"
+    x-show="expanded"
+    x-collapse
+  >
+    <div class="flex flex-col gap-2 p-4">
+      <a
+        href="/#categories"
+        class="text-sm py-2 border-b border-gray-100"
+        @click="expanded = false">Terrenos</a
+      >
+      <a
+        href="/#beneficios"
+        class="text-sm py-2 border-b border-gray-100"
+        @click="expanded = false">Beneficios</a
+      >
+      <a
+        href="/#servicios"
+        class="text-sm py-2 border-b border-gray-100"
+        @click="expanded = false">Mis Servicios</a
+      >
+      <a
+        href="/#testimonios"
+        class="text-sm py-2 border-b border-gray-100"
+        @click="expanded = false">Testimonios</a
+      >
+      <a
+        href="/#contacto"
+        class="text-sm py-2 border-b border-gray-100"
+        @click="expanded = false">Contacto</a
+      >
+      <a
+        href="/#blog"
+        class="text-sm py-2 border-b border-gray-100"
+        @click="expanded = false">Blog</a
+      >
+      <a
+        href="https://wa.me/50660637256?text=Hola%20Jason%2C%20vi%20tu%20sitio%20web%20y%20estoy%20interesado%20en%20terrenos."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-md shadow-md transition-all duration-300 hover:scale-105"
+      >
+        <WAIcon class="h-5 w-5 text-white" />
+        <span>WhatsApp</span>
+      </a>
+      <a
+        href="/categorias"
+        class="bg-primary hover:bg-primary/90 text-black text-sm font-bold px-4 py-2 rounded-md text-center"
+      >
+        Tienda
+      </a>
+    </div>
+  </nav>
 </header>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>
+
+<script is:inline>
+  import Alpine from "alpinejs";
+  import collapse from "@alpinejs/collapse";
+  Alpine.plugin(collapse);
+  window.AlpineCollapse = collapse;
+  window.Alpine = Alpine;
+  Alpine.start();
+</script>

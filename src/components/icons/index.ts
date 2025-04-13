@@ -14,3 +14,5 @@ export { default as ArrowUpRight } from "./ArrowUpRight.astro";
 export { default as Star } from "./Star.astro";
 export { default as Quote } from "./Quote.astro";
 export { default as Mail } from "./Mail.astro";
+export { default as X } from "./X.astro";
+export { default as WAIcon } from "./WAIcon.astro";
