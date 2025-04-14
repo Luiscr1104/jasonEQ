@@ -9,8 +9,8 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
 );
 ---
 
-<section class="max-w-6xl mx-auto px-6 mt-20" id="categories">
-  <div class="text-center mb-16">
+<section class="max-w-6xl mx-auto px-6 mt-12 mb-16" id="categories">
+  <div class="text-center mb-12">
     <!-- Badge superior -->
     <div
       class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 text-primary text-sm px-3 py-1 mb-4"
@@ -20,17 +20,19 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
       <span class="text-secondary">Grupo Ecoquintas</span>
     </div>
 
-    <!-- Título -->
+    <!-- Título optimizado -->
     <h2
       class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-secondary"
     >
-      Terrenos <span class="text-primary">Disponibles</span>
+      Explorá nuestros terrenos en La Fortuna con
+      <span class="text-primary">financiamiento directo</span>
     </h2>
 
-    <!-- Descripción -->
+    <!-- Descripción optimizada -->
     <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-      Te ayudo a encontrar el terreno ideal de Grupo Ecoquintas que se adapte a
-      tus necesidades y presupuesto.
+      Elegí entre distintas zonas y proyectos de Grupo Ecoquintas en La Fortuna.
+      Todos los terrenos están listos para financiar sin prima ni fiador, y
+      cuentan con planos aprobados y uso de suelo listo para construir.
     </p>
   </div>
 
@@ -41,12 +43,12 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
           category.hdThumbnailUrl || category.thumbnailUrl || category.imageUrl;
 
         return (
-          <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+          <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col group">
             {image ? (
               <img
                 src={image}
-                alt={category.name}
-                class="h-48 w-full object-cover"
+                alt={`Terreno en ${category.name} - Grupo Ecoquintas`}
+                class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             ) : (
               <div class="h-48 w-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
@@ -56,7 +58,7 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
 
             <div class="p-5 flex flex-col justify-between flex-grow">
               <div>
-                <h3 class="text-xl font-bold text-secondary mb-1">
+                <h3 class="text-lg font-semibold text-secondary mb-1">
                   {category.name}
                 </h3>
                 {category.productCount > 0 && (
@@ -68,9 +70,9 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
 
               <a
                 href={`/categorias/${category.id}`}
-                class="mt-4 text-center text-sm font-medium text-white bg-primary hover:bg-primary/80 px-4 py-2 rounded-md transition-colors"
+                class="mt-4 text-center text-sm font-medium bg-primary text-white shadow hover:shadow-md transition-all px-4 py-2 rounded-xl"
               >
-                Ver propiedades
+                Ver terrenos
               </a>
             </div>
           </div>

@@ -1,6 +1,5 @@
 ---
 import BlogCard, { type BlogPost } from "@/components/BlogCard.astro";
-
 import { blogPosts } from "@/data/blogPosts";
 ---
 
@@ -10,24 +9,25 @@ import { blogPosts } from "@/data/blogPosts";
       <h2
         class="text-3xl sm:text-4xl font-bold text-[#1C1C1C] font-[Montserrat]"
       >
-        Últimos artículos del blog
+        Invertí mejor: consejos para comprar terrenos en Costa Rica
       </h2>
       <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-        Consejos de inversión, requisitos legales y más sobre cómo comprar tu
-        terreno ideal en Costa Rica.
+        Explorá artículos sobre inversión inmobiliaria, trámites legales,
+        financiamiento y consejos prácticos para comprar terrenos en La Fortuna
+        y otras zonas de alto crecimiento en Costa Rica.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {blogPosts.map((post) => <BlogCard post={post} />)}
     </div>
 
     <div class="flex justify-center mt-10">
       <a
         href="/blog"
-        class="text-sm font-medium text-[#1C1C1C] border border-[#ffcc66] px-5 py-2 rounded-md hover:bg-[#ffcc66] transition"
+        class="text-sm font-medium border border-[#ffcc66] text-[#1C1C1C] hover:text-black px-5 py-2 rounded-md hover:bg-[#ffcc66] transition-colors duration-300"
       >
-        Ver todos los artículos
+        Leer más artículos del blog
       </a>
     </div>
   </div>

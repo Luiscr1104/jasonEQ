@@ -4,22 +4,39 @@ import BlogCard, { type BlogPost } from "@/components/BlogCard.astro";
 import { blogPosts } from "@/data/blogPosts";
 ---
 
-<Layout title="Blog | Jason Castro – Terrenos en La Fortuna">
+<Layout
+  title="Blog sobre terrenos en La Fortuna | Jason Castro – Asesor Inmobiliario"
+  description="Descubrí consejos para invertir en terrenos en La Fortuna de San Carlos. Financiación, plusvalía, ubicación, trámites y más. Blog oficial de Jason Castro."
+  og={{
+    title: "Blog de inversión inmobiliaria en La Fortuna | Jason Castro",
+    description:
+      "Consejos, noticias y oportunidades reales para comprar terrenos en Costa Rica. Financiación sin banco, plusvalía y asesoría directa.",
+    image: "https://terrenoslafortunacr.com/og-blog.jpg",
+    url: "https://terrenoslafortunacr.com/blog",
+  }}
+  twitter={{
+    title: "Blog sobre terrenos en La Fortuna | Jason Castro",
+    description:
+      "Leé artículos prácticos sobre cómo comprar terrenos en Costa Rica, con consejos de financiamiento y guía paso a paso.",
+    image: "https://terrenoslafortunacr.com/og-blog.jpg",
+  }}
+>
   <section class="py-24 bg-background">
     <div class="container max-w-7xl px-6 sm:px-8 mx-auto">
       <!-- Encabezado -->
       <div class="text-center mb-16 max-w-3xl mx-auto">
-        <span class="inline-block text-primary font-medium mb-2"
-          >BLOG OFICIAL</span
-        >
+        <span class="inline-block text-primary font-medium mb-2">
+          BLOG INMOBILIARIO
+        </span>
         <h1
           class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-foreground"
         >
-          Consejos, inversión y noticias
+          Consejos y oportunidades para invertir en La Fortuna
         </h1>
         <p class="mt-4 text-lg text-muted-foreground">
-          Información valiosa sobre la compra de terrenos, inversión
-          inmobiliaria y novedades del mercado en Costa Rica.
+          Explorá artículos prácticos sobre la compra de terrenos,
+          financiamiento, plusvalía y todo lo que necesitás saber para invertir
+          con éxito en La Fortuna, Costa Rica.
         </p>
       </div>
 
@@ -32,7 +49,7 @@ import { blogPosts } from "@/data/blogPosts";
       <div class="mt-20 text-center">
         <a
           href="/"
-          class="inline-block text-sm font-medium border border-primary text-foreground px-6 py-3 rounded-md hover:bg-primary hover:text-white transition"
+          class="inline-block text-sm font-medium border border-primary text-foreground px-6 py-3 rounded-md hover:bg-primary hover:text-yellow-500 transition"
         >
           Volver al inicio
         </a>

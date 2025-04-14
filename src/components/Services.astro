@@ -60,26 +60,29 @@ import { Check, ArrowUpRight } from "@/components/icons";
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           {
             [
-              "Asesoría personalizada",
-              "Visitas guiadas",
-              "Gestión de trámites",
-              "Asesoría financiera",
-            ].map((titulo, index) => (
+              {
+                title: "Asesoría Personalizada",
+                desc: "Te ayudo a elegir el terreno ideal según tus objetivos: inversión, vivienda o desarrollo. Nos enfocamos en lo que realmente necesitás.",
+              },
+              {
+                title: "Visitas Guiadas",
+                desc: "Te acompaño personalmente a recorrer los terrenos que más te interesen, resolviendo todas tus dudas en el sitio.",
+              },
+              {
+                title: "Gestión de Trámites",
+                desc: "Me encargo de la documentación, uso de suelo, escrituración y todo el proceso legal para que compres con tranquilidad.",
+              },
+              {
+                title: "Asesoría Financiera",
+                desc: "Te oriento con opciones de financiamiento accesibles, sin banco ni fiador. Encontramos juntos el plan que se adapta a vos.",
+              },
+            ].map(({ title, desc }) => (
               <div class="bg-muted p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
                 <div class="flex gap-3 mb-4">
                   <Check class="h-6 w-6 text-primary flex-shrink-0" />
-                  <h3 class="font-medium text-lg">{titulo}</h3>
+                  <h3 class="font-medium text-lg">{title}</h3>
                 </div>
-                <p class="text-muted-foreground ml-9">
-                  {
-                    [
-                      "Te ayudo a identificar el terreno que mejor se adapte a tus necesidades y presupuesto.",
-                      "Te acompaño personalmente a conocer los terrenos que te interesen.",
-                      "Te ayudo con toda la documentación y trámites necesarios para la compra.",
-                      "Te oriento sobre las mejores opciones de financiamiento disponibles.",
-                    ][index]
-                  }
-                </p>
+                <p class="text-muted-foreground ml-9">{desc}</p>
               </div>
             ))
           }
@@ -91,7 +94,7 @@ import { Check, ArrowUpRight } from "@/components/icons";
             href="#contacto"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-6 py-3 rounded-md text-base font-medium transition-transform duration-200 group"
           >
-            <span>Agenda una consulta gratuita</span>
+            <span>Quiero una consulta gratuita con Jason</span>
             <ArrowUpRight
               class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
