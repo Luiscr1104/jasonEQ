@@ -6,9 +6,9 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
   class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
   x-data="{ expanded: false }"
 >
-  <div class="container flex h-16 items-center relative">
+  <div class="container flex h-16 items-center relative justify-between">
     <!-- Branding -->
-    <div class="flex items-center gap-3 ml-4">
+    <div class="flex items-center gap-3">
       <a href="/" class="flex items-center gap-2" aria-label="Ir a inicio">
         <img
           src="/isotipo.png"
@@ -29,7 +29,7 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
     </div>
 
     <!-- Menú Desktop -->
-    <nav class="hidden lg:flex items-center gap-8 m-auto">
+    <nav class="hidden lg:flex items-center gap-8 mx-auto">
       <a
         href="/#categories"
         class="text-sm font-bold transition-colors hover:text-primary relative group"
