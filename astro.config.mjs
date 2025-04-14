@@ -5,12 +5,15 @@ import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
 
 import markdoc from "@astrojs/markdoc";
-
 import alpinejs from "@astrojs/alpinejs";
 
 export default defineConfig({
   site: "https://www.terrenoslafortunacr.com",
-  integrations: [sitemap(), markdoc(), alpinejs()],
+  integrations: [
+    sitemap(),
+    markdoc({ components: true }),
+    alpinejs(),
+  ],
   output: "server",
   adapter: vercel(),
   vite: {
