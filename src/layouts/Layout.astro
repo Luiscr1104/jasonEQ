@@ -5,9 +5,10 @@ import Footer from "@/components/Footer.astro";
 import ChatWidget from "@/components/ChatWidget.astro";
 
 const {
-  title = "Terrenos en La Fortuna desde ₡30.000/mes | Compra sin bancos",
-  description = "Compra terrenos en La Fortuna con financiamiento directo. Desde ₡30.000 al mes. Sin bancos, sin trámites complejos. Asesoría personalizada con Jason Castro.",
-  children,
+  title = "Terrenos en La Fortuna desde ₡230.000 al mes | Financiamiento sin bancos",
+  description = "Compra terrenos en La Fortuna con financiamiento directo. Desde ₡230.000 al mes. Sin bancos, sin trámites complejos. Asesoría personalizada con Jason Castro.",
+  ogImage = "https://www.terrenoslafortunacr.com/og-categories.png",
+  ogUrl = "https://www.terrenoslafortunacr.com",
 } = Astro.props;
 ---
 
@@ -15,35 +16,60 @@ const {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={ogUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:site_name" content="Terrenos La Fortuna CR" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Terrenos La Fortuna CR",
+        "url": "https://www.terrenoslafortunacr.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.terrenoslafortunacr.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMJG45547S"
     ></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function () {
-        window.dataLayer.push(arguments);
-      };
-
-      window.gtag("js", new Date());
-      window.gtag("config", "G-WMJG45547S");
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WMJG45547S");
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <title>{title}</title>
-    <meta name="description" content={description} />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://www.terrenoslafortunacr.com" />
-    <meta
-      property="og:image"
-      content="https://www.terrenoslafortunacr.com/og-categorias.jpg"
-    />
-    <meta property="og:type" content="website" />
     <script type="module" src="/alpine.js"></script>
   </head>
 
