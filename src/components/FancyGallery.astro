@@ -3,26 +3,32 @@ const images = [
   {
     url: "/images/galeria/ecoquintas-1.webp",
     caption: "Condominio El Establo",
+    alt: "Vista aérea del Condominio El Establo rodeado de zonas verdes en La Fortuna",
   },
   {
     url: "/images/galeria/ecoquintas-2.webp",
     caption: "Condominio Perla 1",
+    alt: "Terreno en Condominio Perla 1 con paisaje montañoso en el fondo",
   },
   {
     url: "/images/galeria/ecoquintas-3.webp",
     caption: "Condominio Gaia",
+    alt: "Vista panorámica del Condominio Gaia con lotes delimitados",
   },
   {
     url: "/images/galeria/ecoquintas-4.webp",
     caption: "Condominio El Trapiche",
+    alt: "Entrada del Condominio El Trapiche con camino asfaltado",
   },
   {
     url: "/images/galeria/ecoquintas-5.webp",
     caption: "Condominio Nakury 1",
+    alt: "Terreno amplio del Condominio Nakury 1 con cielo despejado",
   },
   {
     url: "/images/galeria/ecoquintas-2.webp",
     caption: "Condominio Gaia",
+    alt: "Otra vista del Condominio Gaia con vegetación abundante",
   },
 ];
 ---
@@ -45,11 +51,11 @@ const images = [
 
 <ul class="gallery">
   {
-    images.map(({ url, caption }) => (
+    images.map(({ url, caption, alt }) => (
       <li>
         <a href="#">
           <figure>
-            <img src={url} alt={caption} />
+            <img src={url} alt={alt} />
             <figcaption>{caption}</figcaption>
           </figure>
         </a>
