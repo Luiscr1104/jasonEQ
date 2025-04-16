@@ -80,6 +80,12 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
           });
+          // 🔥 Track en Google Analytics
+          window.gtag?.("event", "exit_intent_popup_enviado", {
+            event_category: "popup",
+            event_label: "Formulario enviado desde popup de salida",
+            value: 1,
+          });
 
           alert("✅ Gracias, te enviaremos la información.");
           popup.remove();
