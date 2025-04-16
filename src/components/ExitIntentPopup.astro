@@ -1,0 +1,89 @@
+---
+// components/ExitIntentPopup.astro
+---
+
+<script is:inline>
+  if (typeof window !== "undefined") {
+    let hasShownPopup = false;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("mouseout", (e) => {
+        if (
+          !hasShownPopup &&
+          e.clientY < 50 &&
+          e.relatedTarget === null &&
+          window.innerWidth > 768
+        ) {
+          hasShownPopup = true;
+          showExitIntentPopup();
+        }
+      });
+    });
+
+    function showExitIntentPopup() {
+      const popup = document.createElement("div");
+      popup.innerHTML = `
+          <div class="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center">
+            <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center">
+              <h2 class="text-xl font-bold mb-2">¡Esperá! 📍</h2>
+              <p class="text-muted mb-4">¿Querés recibir los terrenos disponibles con precios actualizados?</p>
+              <form id="exitIntentForm" class="flex flex-col gap-2">
+                <input type="text" name="fullname" placeholder="Tu nombre completo" required class="border rounded p-2" />
+                <input type="tel" name="phone" placeholder="Tu WhatsApp" required class="border rounded p-2" />
+                <button type="submit" id="exitSubmitBtn" class="bg-yellow-400 text-black rounded px-4 py-2 mt-2 font-bold">
+                  ¡Quiero info!
+                </button>
+                <div id="exitLoader" class="hidden text-sm text-gray-500 mt-1">Enviando...</div>
+              </form>
+              <button onclick="this.closest('div[class*=fixed]').remove()" class="text-red-600 text-sm mt-3">Cerrar</button>
+            </div>
+          </div>
+        `;
+      document.body.appendChild(popup);
+
+      window.gtag?.("event", "exit_intent_popup_mostrado", {
+        event_category: "popup",
+        event_label: "Intención de salida detectada",
+        value: 1,
+      });
+
+      document
+        .getElementById("exitIntentForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const btn = document.getElementById("exitSubmitBtn");
+          const loader = document.getElementById("exitLoader");
+
+          btn.disabled = true;
+          btn.classList.add("opacity-50", "cursor-not-allowed");
+          loader.classList.remove("hidden");
+
+          const formData = new FormData(form);
+          const fullname = formData.get("fullname") || "";
+          const phone = formData.get("phone") || "";
+
+          const [firstname, ...rest] = fullname.trim().split(" ");
+          const lastname = rest.join(" ") || "-";
+          const email = `${phone}@terrenoslafortunacr.com`;
+
+          const payload = {
+            firstname,
+            lastname,
+            phone,
+            email,
+            message: "Contacto desde intención de salida",
+          };
+
+          await fetch("/api/contacto", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          alert("✅ Gracias, te enviaremos la información.");
+          popup.remove();
+        });
+    }
+  }
+</script>
