@@ -7,6 +7,7 @@ export type EcwidProduct = {
   imageUrl: string;
   description?: string;
   defaultCategoryName?: string;
+  enabled: boolean;
   attributes?: {
     id: number;
     name: string;
@@ -50,6 +51,7 @@ export async function fetchEcwidProducts(): Promise<EcwidProduct[]> {
         imageUrl: item.imageUrl,
         description: item.description,
         defaultCategoryName: item.defaultCategoryName,
+        enabled: item.enabled,
         attributes: item.attributes ?? [],
       }))
     );
@@ -90,6 +92,7 @@ export async function fetchEcwidProductsByCategory(
     imageUrl: item.imageUrl,
     description: item.description,
     defaultCategoryName: item.defaultCategoryName,
+    enabled: item.enabled,
     attributes: item.attributes ?? [], // 👈 Aquí se agrega
   }));
 }

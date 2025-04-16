@@ -6,8 +6,9 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
   class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
   x-data="{ expanded: false }"
 >
-<div class="w-full max-w-[1600px] mx-auto px-6 flex h-16 items-center relative justify-between">
-
+  <div
+    class="w-full max-w-[1600px] mx-auto px-6 flex h-16 items-center relative justify-between"
+  >
     <!-- Branding -->
     <div class="flex items-center gap-3 min-w-[220px] pl-4">
       <a href="/" class="flex items-center gap-2" aria-label="Ir a inicio">
@@ -30,8 +31,9 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
     </div>
 
     <!-- Menú Desktop -->
-    <nav class="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-
+    <nav
+      class="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2"
+    >
       <a
         href="/#categories"
         class="text-sm font-bold transition-colors hover:text-primary relative group"
@@ -90,24 +92,23 @@ import { PhoneCall, Menu, X, WAIcon } from "@/components/icons";
 
     <!-- Acciones Desktop ocultas en pantallas menores a lg -->
     <div class="hidden xl:flex items-center gap-4 ml-auto pr-4">
-
       <a
-      href="https://wa.me/50660637256?text=Hola%20Jason%2C%20vengo%20de%20terrenoslafortunacr.com%20y%20quiero%20más%20información%20sobre%20los%20terrenos%20disponibles%20y%20el%20financiamiento."
-      target="_blank"
-      rel="noopener noreferrer"
-      onclick="gtag('event', 'whatsapp_click', {
+        href="https://wa.me/50660637256?text=Hola%20Jason%2C%20vengo%20de%20terrenoslafortunacr.com%20y%20quiero%20más%20información%20sobre%20los%20terrenos%20disponibles%20y%20el%20financiamiento."
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event', 'whatsapp_click', {
         event_category: 'Conversión',
         event_label: 'WhatsApp Header',
         value: 1
-      })"      
-      class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-md shadow-md transition-all duration-300 hover:scale-105"
-    >
-      <WAIcon class="h-5 w-5 text-white" />
-      <span>Escribime por WhatsApp</span>
-    </a>    
+      })"
+        class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded-md shadow-md transition-all duration-300 hover:scale-105"
+      >
+        <WAIcon class="h-5 w-5 text-white" />
+        <span>Escribime por WhatsApp</span>
+      </a>
       <a
-        href="/categorias"
-        class="bg-primary hover:bg-primary/90 text-black text-base font-bold px-6 py-3 rounded-md shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+        href="/propiedades"
+        class="bg-primary hover:bg-primary/90 text-white text-base font-bold px-6 py-3 rounded-md shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
       >
         Tienda
       </a>

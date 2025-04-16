@@ -12,7 +12,8 @@ import {
   type EcwidProduct,
 } from "@/lib/fetchEcwidProducts";
 
-const products: EcwidProduct[] = await fetchEcwidProducts();
+const allProducts: EcwidProduct[] = await fetchEcwidProducts();
+const products = allProducts.filter((product) => product.enabled);
 ---
 
 <BaseLayout {title} {description} {ogUrl} {ogImage}>
