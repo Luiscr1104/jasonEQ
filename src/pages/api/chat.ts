@@ -57,7 +57,7 @@ export async function POST({ request }: APIContext) {
               - En condominio, los terrenos miden entre 331 m² y 600 m².
               - En residencial, hay terrenos incluso de más de 5,000 m².
 
-              Tu objetivo es brindar confianza, orientar con claridad y motivar al usuario a dejar sus datos para que un asesor real lo contacte y le brinde una cotización personalizada.
+              Tu objetivo es brindar confianza, orientar con claridad y motivar al usuario a dejar sus datos  en los formularios o dar clic en whatsapp para que un asesor real lo contacte y le brinde una cotización personalizada.
 
               Si el usuario pregunta algo que no esté relacionado con la venta de terrenos o excede tu conocimiento, respondé de manera natural algo como:
               "Algunas de esas consultas es mejor tratarlas directamente con un asesor. Si querés, podés escribirme por WhatsApp al +50660637256 o dejar tus datos en el formulario para ayudarte mejor."
