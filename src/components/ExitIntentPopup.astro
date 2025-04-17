@@ -4,42 +4,32 @@
 
 <script is:inline>
   if (typeof window !== "undefined") {
-    let hasShownPopup = false;
+    const STORAGE_KEY = "exit_intent_session_shown";
 
-    document.addEventListener("DOMContentLoaded", () => {
-      document.addEventListener("mouseout", (e) => {
-        if (
-          !hasShownPopup &&
-          e.clientY < 50 &&
-          e.relatedTarget === null &&
-          window.innerWidth > 768
-        ) {
-          hasShownPopup = true;
-          showExitIntentPopup();
-        }
-      });
-    });
+    const alreadyShown = () => sessionStorage.getItem(STORAGE_KEY) === "true";
+    const markAsShown = () => sessionStorage.setItem(STORAGE_KEY, "true");
 
-    function showExitIntentPopup() {
+    const showExitIntentPopup = () => {
       const popup = document.createElement("div");
       popup.innerHTML = `
-          <div class="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center">
-            <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center">
-              <h2 class="text-xl font-bold mb-2">¡Esperá! 📍</h2>
-              <p class="text-muted mb-4">¿Querés recibir los terrenos disponibles con precios actualizados?</p>
-              <form id="exitIntentForm" class="flex flex-col gap-2">
-                <input type="text" name="fullname" placeholder="Tu nombre completo" required class="border rounded p-2" />
-                <input type="tel" name="phone" placeholder="Tu WhatsApp" required class="border rounded p-2" />
-                <button type="submit" id="exitSubmitBtn" class="bg-yellow-400 text-black rounded px-4 py-2 mt-2 font-bold">
-                  ¡Quiero info!
-                </button>
-                <div id="exitLoader" class="hidden text-sm text-gray-500 mt-1">Enviando...</div>
-              </form>
-              <button onclick="this.closest('div[class*=fixed]').remove()" class="text-red-600 text-sm mt-3">Cerrar</button>
-            </div>
+        <div class="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center">
+          <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center shadow-xl">
+            <h2 class="text-xl font-bold mb-2">¡Esperá! 📍</h2>
+            <p class="text-muted mb-4">¿Querés recibir los terrenos disponibles con precios actualizados?</p>
+            <form id="exitIntentForm" class="flex flex-col gap-2">
+              <input type="text" name="fullname" placeholder="Tu nombre completo" required class="border rounded p-2" />
+              <input type="tel" name="phone" placeholder="Tu WhatsApp" required class="border rounded p-2" />
+              <button type="submit" id="exitSubmitBtn" class="bg-yellow-400 text-black rounded px-4 py-2 mt-2 font-bold">
+                ¡Quiero info!
+              </button>
+              <div id="exitLoader" class="hidden text-sm text-gray-500 mt-1">Enviando...</div>
+            </form>
+            <button onclick="this.closest('div[class*=fixed]').remove()" class="text-red-600 text-sm mt-3">Cerrar</button>
           </div>
-        `;
+        </div>
+      `;
       document.body.appendChild(popup);
+      markAsShown();
 
       window.gtag?.("event", "exit_intent_popup_mostrado", {
         event_category: "popup",
@@ -80,7 +70,7 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
           });
-          // 🔥 Track en Google Analytics
+
           window.gtag?.("event", "exit_intent_popup_enviado", {
             event_category: "popup",
             event_label: "Formulario enviado desde popup de salida",
@@ -90,6 +80,23 @@
           alert("✅ Gracias, te enviaremos la información.");
           popup.remove();
         });
-    }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (alreadyShown()) return;
+
+      const onMouseOut = (e) => {
+        if (
+          e.clientY < 50 &&
+          e.relatedTarget === null &&
+          window.innerWidth > 768
+        ) {
+          document.removeEventListener("mouseout", onMouseOut);
+          showExitIntentPopup();
+        }
+      };
+
+      document.addEventListener("mouseout", onMouseOut);
+    });
   }
 </script>

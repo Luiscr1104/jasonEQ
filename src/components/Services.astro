@@ -1,13 +1,11 @@
----
-import { Check, ArrowUpRight } from "@/components/icons";
----
-
-<section id="servicios" class="py-20 bg-background mt-20">
+<section id="servicios" class="py-24 bg-background mt-20">
   <div class="container px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <!-- Imagen y tarjeta -->
       <div class="lg:col-span-5">
-        <div class="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
+        <div
+          class="relative h-[520px] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-border"
+        >
           <img
             src="/jason.webp"
             alt="Jason Castro - Asesor Inmobiliario"
@@ -15,18 +13,22 @@ import { Check, ArrowUpRight } from "@/components/icons";
             loading="eager"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
           >
           </div>
           <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
             <div class="flex items-center gap-2 mb-2">
-              <div class="h-2 w-2 rounded-full bg-primary"></div>
-              <span class="text-sm font-medium">Asesor Certificado</span>
+              <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
+              <span
+                class="text-sm font-medium tracking-wide uppercase opacity-80"
+              >
+                Asesor Certificado
+              </span>
             </div>
             <h3 class="text-2xl font-serif font-bold">Jason Castro</h3>
-            <p class="text-white/80">
+            <p class="text-white/90 text-sm">
               Especialista en terrenos de inversión con más de 5 años de
-              experiencia
+              experiencia.
             </p>
           </div>
         </div>
@@ -34,26 +36,24 @@ import { Check, ArrowUpRight } from "@/components/icons";
 
       <!-- Texto y beneficios -->
       <div class="lg:col-span-7 space-y-6">
-        <span class="inline-block text-primary font-medium mb-2"
-          >MIS SERVICIOS</span
+        <span
+          class="inline-block text-primary font-semibold uppercase tracking-wide mb-2"
         >
+          Mis Servicios
+        </span>
 
         <h2
-          class="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-foreground"
+          class="font-serif text-4xl font-bold tracking-tight text-foreground leading-snug"
         >
-          Mis servicios como
-          <span class="relative inline-block">
-            <span
-              class="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -z-10 rounded"
-            ></span>
-            <span class="relative">asesor independiente</span>
-          </span>
+          Servicios profesionales para encontrar el terreno ideal
         </h2>
 
-        <p class="text-lg text-muted-foreground">
-          Como asesor inmobiliario independiente autorizado por Grupo
-          Ecoquintas, te ofrezco un servicio personalizado para que encuentres
-          el terreno ideal para tu inversión o proyecto.
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          Como asesor independiente autorizado por <strong
+            >Grupo Ecoquintas</strong
+          >, te ayudo a tomar decisiones acertadas en la compra de terrenos, con
+          un enfoque claro en inversión, confianza y acompañamiento
+          personalizado.
         </p>
 
         <!-- Lista de servicios -->
@@ -77,10 +77,23 @@ import { Check, ArrowUpRight } from "@/components/icons";
                 desc: "Te oriento con opciones de financiamiento accesibles, sin banco ni fiador. Encontramos juntos el plan que se adapta a vos.",
               },
             ].map(({ title, desc }) => (
-              <div class="bg-muted p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
+              <div class="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors bg-gradient-to-br from-[#ffcc66]/10 to-white/70">
                 <div class="flex gap-3 mb-4">
-                  <Check class="h-6 w-6 text-primary flex-shrink-0" />
-                  <h3 class="font-medium text-lg">{title}</h3>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-primary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <h3 class="font-medium text-lg text-foreground">{title}</h3>
                 </div>
                 <p class="text-muted-foreground ml-9">{desc}</p>
               </div>
@@ -92,12 +105,22 @@ import { Check, ArrowUpRight } from "@/components/icons";
         <div class="pt-6">
           <a
             href="#contacto"
-            class="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-6 py-3 rounded-md text-base font-medium transition-transform duration-200 group"
+            class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md text-base font-semibold shadow-md transition-transform duration-200 group"
           >
             <span>Quiero una consulta gratuita con Jason</span>
-            <ArrowUpRight
-              class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-primary flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
           </a>
         </div>
       </div>
