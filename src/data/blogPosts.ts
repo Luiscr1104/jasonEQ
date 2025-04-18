@@ -12,14 +12,15 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "🛠️ Guía completa: Cómo elegir el terreno perfecto para construir tu casa",
+    title:
+      "🛠️ Guía completa: Cómo elegir el terreno perfecto para construir tu casa",
     excerpt:
       "Descubre los factores clave que debes considerar antes de comprar un terreno para construir tu hogar soñado.",
     date: "15 marzo, 2024",
     readTime: "8 min",
     category: "Consejos",
     image: "/images/galeria/ecoquintas-1.webp",
-    slug: "guia-elegir-terreno-perfecto",
+    slug: "elegir-terreno-la-fortuna",
   },
   {
     id: "2",
@@ -45,7 +46,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "4",
-    title: "📺 Tendencias 2024 para Comprar Propiedades en Costa Rica (Ecoquintas)",
+    title:
+      "📺 Tendencias 2024 para Comprar Propiedades en Costa Rica (Ecoquintas)",
     excerpt:
       "Mirá el video oficial de Ecoquintas y descubrí las mejores recomendaciones y tendencias para adquirir una propiedad este 2024.",
     date: "2025-04-14",
@@ -53,6 +55,5 @@ export const blogPosts: BlogPost[] = [
     category: "Consejos",
     image: "/images/galeria/ecoquintas-6.webp",
     slug: "tendencias-inmobiliarias-2024-costa-rica",
-  }
+  },
 ];
-
