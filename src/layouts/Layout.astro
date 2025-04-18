@@ -16,7 +16,7 @@ const {
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Google Analytics 4 con Consent Mode V2 -->
+    <!-- ✅ Google Analytics 4 con Consent Mode V2 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9DP9C2DB"
     ></script>
     <script is:inline>
@@ -24,10 +24,13 @@ const {
       function gtag() {
         dataLayer.push(arguments);
       }
+
+      // Consent Mode por defecto: no usar cookies
       gtag("consent", "default", {
         ad_storage: "denied",
         analytics_storage: "denied",
       });
+
       gtag("js", new Date());
       gtag("config", "G-VX9DP9C2DB", {
         anonymize_ip: true,
@@ -99,7 +102,7 @@ const {
       fetchpriority="high"
     />
 
-    <!-- Alpine con plugin collapse -->
+    <!-- ✅ Alpine.js desde CDN con Collapse -->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js?plugins=collapse"
@@ -115,32 +118,6 @@ const {
         width="0"
         style="display:none;visibility:hidden"></iframe>
     </noscript>
-
-    <!-- Cookie Consent Banner -->
-    <script is:inline>
-      document.addEventListener("DOMContentLoaded", () => {
-        if (!localStorage.getItem("cookieConsent")) {
-          const banner = document.createElement("div");
-          banner.className =
-            "fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 text-center p-4 z-[9999] shadow-xl";
-          banner.innerHTML = `
-            <p class="text-sm text-gray-700 mb-2">Usamos cookies para mejorar tu experiencia y analizar el tráfico. ¿Aceptás?</p>
-            <button id="acceptCookies" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold">Aceptar</button>
-          `;
-          document.body.appendChild(banner);
-          document
-            .getElementById("acceptCookies")
-            .addEventListener("click", () => {
-              gtag("consent", "update", {
-                ad_storage: "granted",
-                analytics_storage: "granted",
-              });
-              localStorage.setItem("cookieConsent", "true");
-              banner.remove();
-            });
-        }
-      });
-    </script>
 
     <Header />
     <slot>
