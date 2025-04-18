@@ -129,6 +129,43 @@ const {
     <ChatWidget />
     <ExitIntentPopup />
     <Footer />
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const consent = localStorage.getItem("cookieConsent");
+        if (!consent) {
+          const banner = document.createElement("div");
+          banner.id = "cookie-consent-banner";
+          banner.className =
+            "fixed bottom-4 left-4 right-4 sm:left-auto sm:bottom-6 sm:right-6 max-w-md z-[9999] bg-white border border-gray-200 shadow-lg rounded-xl p-4 text-sm text-gray-800";
+          banner.innerHTML = `
+            <p class="mb-3 text-gray-700 font-medium">
+              Utilizamos cookies para analizar el tráfico y mejorar tu experiencia. Podés aceptar o rechazar.
+            </p>
+            <div class="flex gap-3 justify-end">
+              <button id="acceptCookies" class="bg-primary text-white px-4 py-2 rounded-md font-semibold text-sm hover:bg-primary/90">
+                Aceptar
+              </button>
+              <button id="declineCookies" class="text-sm text-muted-foreground hover:underline">Rechazar</button>
+            </div>
+          `;
+          document.body.appendChild(banner);
+
+          document.getElementById("acceptCookies").onclick = () => {
+            localStorage.setItem("cookieConsent", "accepted");
+            gtag("consent", "update", {
+              ad_storage: "granted",
+              analytics_storage: "granted",
+            });
+            banner.remove();
+          };
+
+          document.getElementById("declineCookies").onclick = () => {
+            localStorage.setItem("cookieConsent", "declined");
+            banner.remove();
+          };
+        }
+      });
+    </script>
   </body>
 </html>
 
