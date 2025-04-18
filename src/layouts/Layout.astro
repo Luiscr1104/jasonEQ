@@ -24,13 +24,10 @@ const {
       function gtag() {
         dataLayer.push(arguments);
       }
-
-      // Consent Mode por defecto: no usar cookies
       gtag("consent", "default", {
         ad_storage: "denied",
         analytics_storage: "denied",
       });
-
       gtag("js", new Date());
       gtag("config", "G-VX9DP9C2DB", {
         anonymize_ip: true,
@@ -129,6 +126,7 @@ const {
     <ChatWidget />
     <ExitIntentPopup />
     <Footer />
+
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
         const consent = localStorage.getItem("cookieConsent");
