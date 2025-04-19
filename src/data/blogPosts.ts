@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min",
     category: "Consejos",
     image: "/images/galeria/ecoquintas-1.webp",
-    slug: "elegir-terreno-la-fortuna",
+    slug: "elegir-terreno-la-fortuna-de-san-carlos",
   },
   {
     id: "2",
@@ -31,11 +31,12 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min",
     category: "Inversión",
     image: "/images/galeria/ecoquintas-4.webp",
-    slug: "por-que-invertir-en-terrenos-la-fortuna",
+    slug: "por-que-invertir-en-terrenos-la-fortuna-de-san-carlos",
   },
   {
     id: "3",
-    title: "🚀 Terrenos en La Fortuna con Plusvalía Garantizada (Guía 2025)",
+    title:
+      "🚀 Terrenos en La Fortuna de San Carlos con Plusvalía Garantizada (Guía 2025)",
     excerpt:
       "Descubrí por qué invertir en terrenos en La Fortuna es una de las mejores decisiones inmobiliarias del 2025. Ubicación privilegiada, alta plusvalía y conexión directa con el Volcán Arenal.",
     date: "2025-04-12",
