@@ -2,9 +2,9 @@
   class="relative overflow-hidden bg-background"
   aria-labelledby="hero-title"
 >
-  <!-- Imagen de fondo con gradiente -->
+  <!-- Imagen de fondo con aspect ratio y gradiente -->
   <div
-    class="absolute inset-0 z-0 animate-fade-in"
+    class="relative w-full aspect-[3/2] sm:aspect-[16/9] overflow-hidden"
     role="img"
     aria-label="Terrenos Ecoquintas"
   >
@@ -15,17 +15,19 @@
       height="1000"
       loading="eager"
       fetchpriority="high"
-      class="w-full h-full object-cover brightness-[0.95]"
+      class="absolute inset-0 w-full h-full object-cover brightness-[0.9]"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40">
     </div>
   </div>
 
   <!-- Contenido -->
   <div
-    class="relative z-10 px-6 sm:px-8 md:px-12 max-w-7xl mx-auto py-20 sm:py-24 md:py-32 lg:py-40 animate-fade-up"
+    class="absolute inset-0 z-10 flex items-center px-6 sm:px-8 md:px-12 max-w-7xl mx-auto"
   >
-    <header class="max-w-3xl space-y-8">
+    <header
+      class="max-w-3xl text-white space-y-8 animate-fade-up text-center sm:text-left"
+    >
       <!-- Badge superior -->
       <div
         class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white backdrop-blur-sm"
@@ -38,19 +40,20 @@
         Asesor Autorizado de Grupo Ecoquintas
       </div>
 
-      <!-- Título optimizado SEO -->
+      <!-- Título -->
       <h1
         id="hero-title"
-        class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white drop-shadow-md sm:drop-shadow-lg leading-tight"
+        class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight drop-shadow-lg leading-tight"
       >
         <strong>Compra tu terreno en La Fortuna de San Carlos</strong> con <span
-          class="text-primary">financiamiento 100%,</span
-        > aprobado y <span class="italic">asesoría personalizada gratuita</span>
+          class="text-primary">financiamiento 100%</span
+        >, aprobado y <span class="italic">asesoría personalizada gratuita</span
+        >
       </h1>
 
       <!-- Beneficios clave -->
       <ul
-        class="flex flex-wrap gap-3 mt-6 list-none"
+        class="flex flex-wrap justify-center sm:justify-start gap-3 list-none"
         aria-label="Beneficios principales"
       >
         {
@@ -63,9 +66,7 @@
       </ul>
 
       <!-- Descripción -->
-      <p
-        class="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4"
-      >
+      <p class="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed">
         Te ayudamos a <strong
           >invertir en terrenos en La Fortuna de San Carlos</strong
         > con acompañamiento profesional y <strong
