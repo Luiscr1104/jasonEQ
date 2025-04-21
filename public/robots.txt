@@ -1,11 +1,27 @@
 User-agent: *
 Allow: /
 
-# Evita que bots indexen rutas irrelevantes
+# Bloquear rutas que no aportan valor SEO
 Disallow: /admin/
 Disallow: /api/
 Disallow: /drafts/
-Disallow: /private/
+Disallow: /privacidad/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /thank-you/
+Disallow: /search
 
-# Sitemap para guiar mejor el rastreo
+# Bloquear parámetros comunes (si los usás)
+Disallow: /*?*
+Disallow: /*&*
+
+# Asegura el crawl correcto de tus recursos
+Allow: *.js
+Allow: *.css
+Allow: *.png
+Allow: *.webp
+Allow: *.jpg
+Allow: *.svg
+
+# Sitemap oficial
 Sitemap: https://www.terrenoslafortunacr.com/sitemap.xml
