@@ -57,4 +57,15 @@ export const blogPosts: BlogPost[] = [
     image: "/images/galeria/ecoquintas-6.webp",
     slug: "tendencias-inmobiliarias-2024-costa-rica",
   },
+  {
+    id: "5",
+    title: "Terrenos baratos en Costa Rica: Guía 2025 para invertir sin bancos",
+    excerpt:
+      "Explorá cómo invertir en terrenos baratos en Costa Rica, especialmente en zonas como La Fortuna de San Carlos, con financiamiento 100% directo, sin bancos ni fiador.",
+    date: "2025-04-21",
+    readTime: "7 min",
+    category: "Inversión",
+    image: "/images/galeria/ecoquintas-2.webp",
+    slug: "terrenos-baratos-en-costa-rica",
+  },
 ];
