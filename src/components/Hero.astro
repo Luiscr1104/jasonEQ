@@ -1,39 +1,31 @@
 <section
-  class="relative overflow-hidden bg-background"
+  class="relative w-full overflow-hidden bg-background min-h-[calc(100vh-4rem)] sm:aspect-[16/9]"
   aria-labelledby="hero-title"
 >
-  <!-- Imagen de fondo con aspect ratio y gradiente -->
-  <div
-    class="relative w-full aspect-[3/2] sm:aspect-[16/9] overflow-hidden"
-    role="img"
-    aria-label="Terrenos Ecoquintas"
-  >
-    <img
-      src="https://imagedelivery.net/Lh5ivcu1Gl9SRBAdYRSP2g/114bc3e7-693a-463d-e011-6c7bc4889700/public"
-      alt="Compra terrenos en La Fortuna de San Carlos"
-      width="1500"
-      height="1000"
-      loading="eager"
-      fetchpriority="high"
-      class="absolute inset-0 w-full h-full object-cover brightness-[0.9]"
-    />
-    <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40">
-    </div>
+  <!-- Imagen de fondo + gradiente -->
+  <img
+    src="https://imagedelivery.net/Lh5ivcu1Gl9SRBAdYRSP2g/114bc3e7-693a-463d-e011-6c7bc4889700/public"
+    alt="Compra terrenos en La Fortuna de San Carlos"
+    width="1500"
+    height="1000"
+    loading="eager"
+    fetchpriority="high"
+    class="absolute inset-0 w-full h-full object-cover brightness-[0.9] z-0"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-0">
   </div>
 
-  <!-- Contenido -->
-  <div
-    class="absolute inset-0 z-10 flex items-center px-6 sm:px-8 md:px-12 max-w-7xl mx-auto"
-  >
+  <!-- Contenido sobre la imagen -->
+  <div class="absolute inset-0 z-10 flex items-center pt-[4rem] px-4 sm:px-8">
     <header
-      class="max-w-3xl text-white space-y-8 animate-fade-up text-center sm:text-left"
+      class="text-white space-y-5 max-w-3xl mx-auto text-center sm:text-left"
     >
-      <!-- Badge superior -->
+      <!-- Badge -->
       <div
-        class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white backdrop-blur-sm"
+        class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs sm:text-sm backdrop-blur-sm"
       >
         <span
-          class="mr-2 rounded-full bg-primary px-2 py-0.5 text-xs font-medium"
+          class="mr-2 rounded-full bg-primary px-2 py-0.5 text-[10px] sm:text-xs font-medium"
         >
           Oficial
         </span>
@@ -43,73 +35,51 @@
       <!-- Título -->
       <h1
         id="hero-title"
-        class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight drop-shadow-lg leading-tight"
+        class="font-serif text-xl sm:text-4xl md:text-5xl font-bold tracking-tight drop-shadow-lg leading-tight sm:leading-snug"
       >
-        <strong>Compra tu terreno en La Fortuna de San Carlos</strong> con <span
-          class="text-primary">financiamiento 100%</span
-        >, aprobado y <span class="italic">asesoría personalizada gratuita</span
-        >
+        <strong>Terrenos en La Fortuna de San Carlos</strong> con
+        <span class="text-primary">financiamiento 100%</span> y
+        <span class="italic">asesoría gratuita</span>
       </h1>
 
-      <!-- Beneficios clave -->
+      <!-- Beneficios -->
       <ul
-        class="flex flex-wrap justify-center sm:justify-start gap-3 list-none"
-        aria-label="Beneficios principales"
+        class="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 text-sm sm:text-base"
       >
         {
-          ["100% financiadas", "Sin prima", "Sin fiador"].map((benefit) => (
-            <li class="bg-white/10 border border-white/20 text-white text-sm sm:text-base font-medium px-5 py-2 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition">
-              {benefit}
+          ["100% financiadas", "Sin prima", "Sin fiador"].map((b) => (
+            <li class="bg-white/10 border border-white/20 text-white px-4 py-1.5 rounded-full backdrop-blur-sm shadow-sm hover:bg-white/20 transition">
+              {b}
             </li>
           ))
         }
       </ul>
 
       <!-- Descripción -->
-      <p class="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed">
-        Te ayudamos a <strong
-          >invertir en terrenos en La Fortuna de San Carlos</strong
-        > con acompañamiento profesional y <strong
-          >financiamiento 100% aprobado</strong
-        >.
+      <p class="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed">
+        <strong>Invertí con acompañamiento profesional</strong> y
+        <strong>sin bancos ni fiador</strong>.
         <span class="hidden sm:inline">
-          Aprovechá precios exclusivos, planos listos, ubicación estratégica y
-          un proceso sin bancos ni fiador.
+          Aprovechá precios exclusivos, ubicación estratégica y planos listos.
         </span>
       </p>
 
       <!-- Botones -->
-      <nav
-        class="flex flex-col sm:flex-row gap-4 pt-6"
-        aria-label="Acciones principales"
-      >
+      <nav class="flex flex-col sm:flex-row gap-3 pt-4 sm:pt-6">
         <a
           href="/propiedades"
-          class="text-white bg-primary hover:bg-primary/80 px-6 py-3 rounded-md text-center text-base font-medium transition-colors duration-200"
+          class="text-white bg-primary hover:bg-primary/80 px-5 py-2.5 rounded-md text-sm sm:text-base font-medium text-center transition"
         >
-          Ver terrenos disponibles
+          Ver terrenos
         </a>
         <a
           href="#contacto"
-          class="bg-white/10 text-white border border-white/20 hover:bg-white/20 px-6 py-3 rounded-md text-center text-base font-medium transition-colors duration-200"
+          class="bg-white/10 text-white border border-white/20 hover:bg-white/20 px-5 py-2.5 rounded-md text-sm sm:text-base font-medium text-center transition"
         >
           Contactarme
         </a>
       </nav>
     </header>
-  </div>
-
-  <!-- SVG decorativo inferior -->
-  <div class="custom-shape-divider-bottom-1743179714">
-    <svg
-      data-name="Layer 1"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1200 120"
-      preserveAspectRatio="none"
-    >
-      <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" class="shape-fill"
-      ></path>
-    </svg>
   </div>
 </section>
 
