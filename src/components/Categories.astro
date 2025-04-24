@@ -48,7 +48,7 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
             {image ? (
               <img
                 src={image}
-                alt={`Terreno en ${category.name} - Grupo Ecoquintas`}
+                alt={`Terreno en venta en ${category.name} - Terrenos en La Fortuna de San Carlos`}
                 class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             ) : (
@@ -71,6 +71,7 @@ const categories: EcwidCategory[] = (await fetchEcwidCategories()).filter(
 
               <a
                 href={`/categorias/${category.id}`}
+                aria-label={`Ver terrenos en ${category.name}`}
                 class="mt-4 text-center text-sm font-medium bg-primary text-white shadow hover:shadow-md transition-all px-4 py-2 rounded-xl"
               >
                 Ver terrenos
