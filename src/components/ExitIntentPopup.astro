@@ -31,12 +31,6 @@
       document.body.appendChild(popup);
       markAsShown();
 
-      window.gtag?.("event", "exit_intent_popup_mostrado", {
-        event_category: "popup",
-        event_label: "Intención de salida detectada",
-        value: 1,
-      });
-
       document
         .getElementById("exitIntentForm")
         .addEventListener("submit", async (e) => {

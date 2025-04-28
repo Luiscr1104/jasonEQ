@@ -223,6 +223,16 @@ const suggested = shuffleArray(
                       showToast(
                         "✅ ¡Gracias! Pronto recibirás información personalizada."
                       );
+                      if (
+                        typeof window !== "undefined" &&
+                        typeof window.gtag === "function"
+                      ) {
+                        window.gtag("event", "formulario_contacto_enviado", {
+                          event_category: "formularios",
+                          event_label: "Formulario en propiedades",
+                          value: 1,
+                        });
+                      }
                     } else {
                       showToast("❌ Error: " + data.message);
                     }
