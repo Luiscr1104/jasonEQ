@@ -61,11 +61,23 @@ export const blogPosts: BlogPost[] = [
     id: "5",
     title: "Terrenos baratos en Costa Rica: Guía 2025 para invertir sin bancos",
     excerpt:
-      "Explorá cómo invertir en terrenos baratos en Costa Rica, especialmente en zonas como La Fortuna de San Carlos, con financiamiento 100% directo, sin bancos ni fiador.",
-    date: "2025-04-21",
+      "Descubrí cómo invertir en terrenos baratos en Costa Rica, en zonas de alta plusvalía como La Fortuna, con financiamiento 100% directo, sin bancos ni fiador.",
+    date: "2025-04-28",
     readTime: "7 min",
     category: "Inversión",
     image: "/images/galeria/ecoquintas-2.webp",
     slug: "terrenos-baratos-en-costa-rica",
+  },
+  {
+    id: "6",
+    title:
+      "¿Qué conviene más en 2025: comprar un terreno o una casa en La Fortuna de San Carlos?",
+    excerpt:
+      "Analizamos los costos, ventajas y desventajas de invertir en un terreno versus comprar una casa terminada en La Fortuna de San Carlos. Guía actualizada con cifras reales.",
+    date: "2025-04-28",
+    readTime: "7 min",
+    category: "Inversión",
+    image: "/images/galeria/ecoquintas-7.webp",
+    slug: "comprar-terreno-o-casa-la-fortuna-san-carlos",
   },
 ];
