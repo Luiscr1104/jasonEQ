@@ -93,6 +93,7 @@ import {
       <div class="lg:col-span-7">
         <form
           id="contactForm"
+          data-event="formulario-contacto"
           method="POST"
           action="/api/contacto"
           enctype="application/x-www-form-urlencoded"
@@ -277,18 +278,6 @@ import {
               const firstname = formData.get("firstname") || "";
               const lastname = formData.get("lastname") || "";
               formData.set("fullname", `${firstname} ${lastname}`);
-
-              // 🔥 Envío del evento GA4
-              if (
-                typeof window !== "undefined" &&
-                typeof window.gtag === "function"
-              ) {
-                window.gtag("event", "formulario_contacto_enviado", {
-                  event_category: "formularios",
-                  event_label: "Formulario principal - Solicitar información",
-                  value: 1,
-                });
-              }
 
               try {
                 const response = await fetch("/api/contacto", {
