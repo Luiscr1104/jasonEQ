@@ -80,4 +80,16 @@ export const blogPosts: BlogPost[] = [
     image: "/images/galeria/ecoquintas-7.webp",
     slug: "comprar-terreno-o-casa-la-fortuna-san-carlos",
   },
+  {
+    id: "7",
+    title:
+      "Guía para ticos en el extranjero: Cómo invertir en terrenos en Costa Rica desde Miami, Nueva York o Madrid",
+    excerpt:
+      "Descubrí cómo miles de costarricenses en el exterior están invirtiendo en terrenos en La Fortuna sin necesidad de bancos, fiador ni complicaciones.",
+    date: "2025-04-30",
+    readTime: "8 min",
+    category: "Inversión",
+    image: "/images/galeria/ecoquintas-5.webp",
+    slug: "ticos-extranjero-invertir-en-terrenos",
+  },
 ];
