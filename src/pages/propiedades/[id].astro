@@ -73,6 +73,7 @@ const suggested = shuffleArray(
 
           <form
             id="contactForm"
+            data-event="formulario-contacto"
             method="POST"
             action="/api/contacto"
             enctype="application/x-www-form-urlencoded"
@@ -146,6 +147,7 @@ const suggested = shuffleArray(
                 type="submit"
                 class="w-full bg-advisor-teal hover:bg-advisor-teal-dark text-white font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center gap-2"
                 id="submitBtn"
+                data-event="form-propiedades"
               >
                 Enviar mensaje
               </button>
@@ -223,16 +225,6 @@ const suggested = shuffleArray(
                       showToast(
                         "✅ ¡Gracias! Pronto recibirás información personalizada."
                       );
-                      if (
-                        typeof window !== "undefined" &&
-                        typeof window.gtag === "function"
-                      ) {
-                        window.gtag("event", "formulario_contacto_enviado", {
-                          event_category: "formularios",
-                          event_label: "Formulario en propiedades",
-                          value: 1,
-                        });
-                      }
                     } else {
                       showToast("❌ Error: " + data.message);
                     }
