@@ -30,6 +30,18 @@ const {
       })(window, document, "script", "dataLayer", "GTM-WTNGG5FW");
     </script>
 
+    <!-- Google Analytics gtag.js (necesario para consent updates) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMJG45547S"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WMJG45547S");
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
