@@ -16,3 +16,8 @@ export { default as Quote } from "./Quote.astro";
 export { default as Mail } from "./Mail.astro";
 export { default as X } from "./X.astro";
 export { default as WAIcon } from "./WAIcon.astro";
+export { default as CalendarIcon } from "./CalendarIcon.astro";
+export { default as CircleIcon } from "./CircleIcon.astro";
+export { default as DiscountIcon } from "./DiscountIcon.astro";
+export { default as GiftIcon } from "./GiftIcon.astro";
+export { default as ShareIcon } from "./ShareIcon.astro";

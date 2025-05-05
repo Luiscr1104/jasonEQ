@@ -1,0 +1,155 @@
+---
+import {
+  CalendarIcon,
+  Clock,
+  MapPin,
+  GiftIcon,
+  CircleIcon,
+  DiscountIcon,
+  ShareIcon,
+} from "@/components/icons";
+
+const {
+  title = "¡Celebramos 25 años contigo! Open House 🎈",
+  description = "Con mucha alegría te invitamos a nuestro Open House para celebrar 25 años de trayectoria. Tendremos descuentos especiales, regalías y promociones exclusivas para todos los asistentes.",
+  imageUrl = "/promo-1.webp",
+  date = "Sábado 17 de mayo de 2025",
+  location = "Ecoquintas La Fortuna",
+  time = "8:00 am a 5:00 pm",
+  benefits = [
+    "25% de descuento en proyectos seleccionados",
+    "Atención personalizada por nuestros asesores",
+    "Refrigerio incluido durante todo el evento",
+    "Recorridos guiados por los terrenos disponibles",
+    "Promociones exclusivas solo por ese día",
+    "Cash back para los primeros 25 que formalicen",
+    "Regalos sorpresa para todos los asistentes",
+  ],
+  ctaText = "Agendar visita",
+  ctaLink = "/#contacto",
+  shareEnabled = true,
+} = Astro.props;
+---
+
+<section
+  class="py-16 bg-gradient-to-b from-primary/5 to-white relative overflow-hidden"
+>
+  <div class="container relative">
+    <!-- Badge superior -->
+    <div class="text-center mb-8">
+      <div
+        class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 text-primary text-sm px-3 py-1 mb-4"
+      >
+        <span class="font-medium">Promoción Mensual</span>
+        <span class="mx-2">•</span>
+        <span class="text-secondary">Grupo Ecoquintas</span>
+      </div>
+
+      <h2
+        class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-secondary"
+      >
+        🎉 ¡Celebramos 25 años contigo!
+        <span class="text-primary">Invitación al Open House</span>
+      </h2>
+
+      <p class="mt-4 px-2 text-lg text-muted-foreground max-w-2xl mx-auto">
+        Te invitamos este <strong>{date}</strong> a nuestro Open House en <strong
+          >{location}</strong
+        >. Descuentos especiales, regalías y promociones exclusivas para todos
+        los asistentes.
+      </p>
+    </div>
+
+    <!-- Promo principal -->
+    <div
+      class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+        <div class="relative h-[300px] lg:h-auto overflow-hidden">
+          <img
+            src={imageUrl}
+            alt={title}
+            class="object-cover w-full h-full"
+            loading="eager"
+          />
+          <div
+            class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2"
+          >
+            <DiscountIcon class="h-5 w-5" />
+            <span>¡Oferta Especial!</span>
+          </div>
+        </div>
+
+        <div class="p-6 lg:p-8 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-serif font-bold text-secondary mb-3">
+              {title}
+            </h3>
+            <p class="text-muted-foreground mb-6">{description}</p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center gap-3">
+                <CalendarIcon class="h-5 w-5 text-primary" />
+                <p class="font-medium">{date}</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <MapPin class="h-5 w-5 text-primary" />
+                <p class="font-medium">{location}</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <Clock class="h-5 w-5 text-primary" />
+                <p class="font-medium">{time}</p>
+              </div>
+            </div>
+
+            <h4 class="font-medium text-secondary mb-2">Beneficios:</h4>
+            <ul class="space-y-2 mb-6">
+              {
+                (benefits as string[]).map((benefit: string, index: number) => (
+                  <li class="flex items-start gap-2">
+                    {index % 2 === 0 ? (
+                      <GiftIcon class="h-5 w-5 text-primary mt-0.5" />
+                    ) : (
+                      <CircleIcon class="h-5 w-5 text-primary mt-0.5" />
+                    )}
+                    <span>{benefit}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 mt-4">
+            <a
+              href={ctaLink}
+              class="bg-primary hover:bg-primary/80 text-white text-center px-4 py-2 rounded-md font-medium"
+            >
+              {ctaText}
+            </a>
+            <a
+              href="https://wa.me/50660637256?text=Hola%2C%20vengo%20desde%20TerrenosLaFortunaCR.com%20y%20quiero%20confirmar%20mi%20asistencia%20al%20Open%20House%20de%20Grupo%20Ecoquintas."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border border-primary/20 text-primary hover:bg-primary/5 text-center px-4 py-2 rounded-md font-medium"
+            >
+              Confirmar asistencia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-amber-500 text-white p-4 text-center font-bold">
+        <p class="text-lg md:text-xl">
+          ¡REGALAMOS 25 MILLONES EN CASH BACK! Premiamos a los primeros 25 que
+          formalicen con nosotros
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <p class="text-muted-foreground">
+        Esta promoción es por tiempo limitado. ¡No dejés pasar esta oportunidad!
+      </p>
+    </div>
+  </div>
+</section>
