@@ -92,4 +92,17 @@ export const blogPosts: BlogPost[] = [
     image: "/images/galeria/ecoquintas-5.webp",
     slug: "ticos-extranjero-invertir-en-terrenos",
   },
+  {
+    id: "8",
+
+    title:
+      "¿Recesión global? Por qué ahora es el mejor momento para invertir en terrenos en Costa Rica",
+    excerpt:
+      "Mientras el mundo enfrenta incertidumbre económica, cada vez más personas están asegurando su futuro invirtiendo en terrenos en La Fortuna. Descubrí cómo proteger tu dinero y hacerlo crecer con una inversión real, sin bancos ni trámites.",
+    date: "2025-05-04",
+    readTime: "7 min",
+    category: "Inversión",
+    image: "/images/galeria/ecoquintas-8.webp",
+    slug: "recesion-invertir-terrenos-costa-rica",
+  },
 ];

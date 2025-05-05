@@ -25,7 +25,13 @@ import { blogPosts } from "@/data/blogPosts";
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {blogPosts.map((post) => <BlogCard post={post} />)}
+      {
+        blogPosts
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          )
+          .map((post) => <BlogCard post={post} />)
+      }
     </div>
 
     <div class="flex justify-center mt-10">
