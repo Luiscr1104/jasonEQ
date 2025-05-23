@@ -35,7 +35,7 @@ export async function sendContactEmail({
     .replaceAll("{{message}}", message || "Sin mensaje");
 
   return await resend.emails.send({
-    from: "Jason Castro <no-reply@lafortunalaw.com>",
+    from: "Jason Castro <no-reply@terrenoslafortunacr.com>",
     to: ["luiscr1104@gmail.com", "jcastro@ecoquintas.com"],
     subject: "📩 Nuevo contacto desde TerrenosLaFortunaCR.com",
     html: htmlTemplate,
